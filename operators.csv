@@ -1,0 +1,94 @@
+name,category,scope,definition,description,level,documentation
+add,Arithmetic,"[""REGULAR""]","add(x, y, filter = false), x + y",Adds two or more inputs element wise. Set filter=true to treat NaNs as 0 before summing.,ALL,/operators/add
+abs,Arithmetic,"[""REGULAR""]",abs(x),"Returns the absolute value of a number, removing any negative sign.",ALL,/operators/abs
+log,Arithmetic,"[""REGULAR""]",log(x),Calculates the natural logarithm of the input value. Commonly used to transform data that has positive values.,ALL,/operators/log
+subtract,Arithmetic,"[""REGULAR""]","subtract(x, y, filter=false), x - y",Subtracts inputs left to right: x ? y ? … Supports two or more inputs. Set filter=true to treat NaNs as 0 before subtraction.,ALL,/operators/subtract
+signed_power,Arithmetic,"[""REGULAR""]","signed_power(x, y)",x raised to the power of y such that final result preserves sign of x,ALL,/operators/signed_power
+sign,Arithmetic,"[""REGULAR""]",sign(x),"Returns the sign of a number: +1 for positive, -1 for negative, and 0 for zero. If the input is NaN, returns NaN.
+
+Input: Value of 7 instruments at day t: (2, -3, 5, 6, 3, NaN, -10)
+Output: (1, -1, 1, 1, 1, NaN, -1)",ALL,/operators/sign
+reverse,Arithmetic,"[""REGULAR""]",reverse(x), - x,ALL,
+power,Arithmetic,"[""REGULAR""]","power(x, y)","Returns x raised to the power of y (x ^ y). Note: power(x, y) can drop the sign of x when y is non-integer; use signed_power(x, y) to preserve the sign of x.",ALL,/operators/power
+multiply,Arithmetic,"[""REGULAR""]","multiply(x ,y, ... , filter=false), x * y",Multiplies two or more inputs element wise. Set filter=true to treat NaNs as 1 before multiplication,ALL,/operators/multiply
+min,Arithmetic,"[""REGULAR""]","min(x, y ..)",Minimum value of all inputs. At least 2 inputs are required,ALL,/operators/min
+max,Arithmetic,"[""REGULAR""]","max(x, y, ..)",Maximum value of all inputs. At least 2 inputs are required,ALL,/operators/max
+inverse,Arithmetic,"[""REGULAR""]",inverse(x),"Returns the reciprocal of x (1 / x). Note: errors when x = 0; to avoid it, use inverse(add(x, 0.0001)); adding a small epsilon prevents divide-by-zero errors.",ALL,
+sqrt,Arithmetic,"[""REGULAR""]",sqrt(x),"Returns the non-negative square root of x. Equivalent to power(x, 0.5). Note: for x < 0 the result is undefined; to retain the sign of x, use signed_power(x, 0.5) instead.",ALL,/operators/sqrt
+s_log_1p,Arithmetic,"[""REGULAR""]",s_log_1p(x),Confine function to a shorter range using logarithm such that higher input remains higher and negative input remains negative as an output of resulting function and -1 or 1 is an asymptotic value,,/operators/s_log_1p
+densify,Arithmetic,"[""REGULAR""]",densify(x),Converts a grouping field of many buckets into lesser number of only available buckets so as to make working with grouping fields computationally efficient,ALL,/operators/densify
+divide,Arithmetic,"[""REGULAR""]","divide(x, y), x / y","Returns x divided by y (x / y). Note: dividing by zero raises an error; to avoid it, use divide(x, add(y, 0.0001)); adding a small epsilon to the denominator prevents divide-by-zero errors.",ALL,
+not,Logical,"[""REGULAR""]",not(x),Returns the logical negation of x. Returns 0 when x is 1 (‘true’) and 1 when x is 0 (‘false’).,ALL,
+and,Logical,"[""REGULAR""]","and(input1, input2)","Returns 1 ('true') if both inputs are 1 ('true'). Otherwise, returns 0 ('false').",ALL,
+less,Logical,"[""REGULAR""]",input1 < input2,"Returns 1 ('true') if input1 is a smaller than input2. Otherwise, returns 0 ('false').",ALL,
+equal,Logical,"[""REGULAR""]",input1 == input2,"Returns 1 ('true') if input1 and input2 are the same. Otherwise, returns 0 ('false').",ALL,
+or,Logical,"[""REGULAR""]","or(input1, input2)","Returns 1 if either input is true (either input1 or input2 has a value of 1), otherwise it returns 0.",ALL,
+not_equal,Logical,"[""REGULAR""]",input1!= input2,"Returns 1 ('true') if input1 and input2 are different numbers. Otherwise, returns 0 ('false').",ALL,
+greater,Logical,"[""REGULAR""]",input1 > input2,"Returns 1 ('true') if input1 is a larger than input2. Otherwise, returns 0 ('false').",ALL,
+greater_equal,Logical,"[""REGULAR""]",input1 >= input2,"Returns 1 ('true') if input1 is a larger or the same as input2. Otherwise, returns 0 ('false').",ALL,
+less_equal,Logical,"[""REGULAR""]",input1 <= input2,"Returns 1 ('true') if input1 is a smaller or the same as input2. Otherwise, returns 0 ('false').",ALL,
+is_nan,Logical,"[""REGULAR""]",is_nan(input),If (input == NaN) return 1 else return 0,ALL,/operators/is_nan
+if_else,Logical,"[""REGULAR""]","if_else(input1, input2, input 3)","The if_else operator returns one of two values based on a condition. If the condition is true, it returns the first value; if false, it returns the second value.",ALL,/operators/if_else
+ts_sum,Time Series,"[""REGULAR""]","ts_sum(x, d)",Sum values of x for the past d days.,ALL,
+ts_scale,Time Series,"[""REGULAR""]","ts_scale(x, d, constant = 0)","Scales a time series to a 0–1 range based on its minimum and maximum values over a specified period, with an optional constant shift.",ALL,/operators/ts_scale
+ts_mean,Time Series,"[""REGULAR""]","ts_mean(x, d)",Calculates the simple average (mean) value of a variable x over the past d days.,ALL,/operators/ts_mean
+ts_zscore,Time Series,"[""REGULAR""]","ts_zscore(x, d)","Calculates the Z-score of a time series, showing how far today's value is from the recent average, measured in standard deviations. Useful for standardizing and comparing values over time.",ALL,/operators/ts_zscore
+ts_std_dev,Time Series,"[""REGULAR""]","ts_std_dev(x, d)","Calculates the standard deviation of a data series x over the past d days, measuring how much the values deviate from their mean during that period.",ALL,/operators/ts_std_dev
+kth_element,Time Series,"[""REGULAR""]","kth_element(x, d, k, ignore=“NaN”)","Returns the K-th value from a time series by looking back over a specified number of (‘d’) days, with the option to ignore certain values. Commonly used for backfilling missing data.",ALL,/operators/kth_element
+inst_tvr,Time Series,"[""REGULAR""]","inst_tvr(x, d)","Total trading value / Total holding value in the past d days
+
+Input: Value of 1 instrument in past 5 days where first element is the latest: (105, 102, 99, 101,100)
+Output: 0.022 from (1+2+3+3)/(105+102+99+101)",,
+ts_corr,Time Series,"[""REGULAR""]","ts_corr(x, y, d)","Calculates the Pearson correlation between two variables, x and y, over the past d days, showing how closely they move together.",ALL,/operators/ts_corr
+ts_count_nans,Time Series,"[""REGULAR""]","ts_count_nans(x ,d)",Counts the number of missing (NaN) values in a data series over a specified number of days.,ALL,/operators/ts_count_nans
+ts_target_tvr_decay,Time Series,"[""REGULAR""]","ts_target_tvr_decay(x, lambda_min=0, lambda_max=1, target_tvr=0.1)","Tune ""ts_decay"" to have a turnover equal to a certain target, with optimization weight range between lambda_min, lambda_max",,
+ts_median,Time Series,"[""REGULAR""]","ts_median(x, d)",Returns median value of x for the past d days,,
+ts_covariance,Time Series,"[""REGULAR""]","ts_covariance(y, x, d)","Calculates the covariance between two time-series variables, y and x, over the past d days. Useful for measuring how two variables move together within a specified historical window.",ALL,/operators/ts_covariance
+ts_decay_linear,Time Series,"[""REGULAR""]","ts_decay_linear(x, d, dense = false)","Applies a linear decay to time-series data over a set number of days, smoothing the data by averaging recent values and reducing the impact of older or missing data.",ALL,/operators/ts_decay_linear
+ts_product,Time Series,"[""REGULAR""]","ts_product(x, d)",Returns the product of the values of x over the past d days. Useful for calculating geometric means and compounding returns or growth rates.,ALL,/operators/ts_product
+ts_regression,Time Series,"[""REGULAR""]","ts_regression(y, x, d, lag = 0, rettype = 0)",Returns various parameters related to regression function,ALL,/operators/ts_regression
+ts_delta_limit,Time Series,"[""REGULAR""]","ts_delta_limit(x, y, limit_volume=0.1)","Limit the change in the Alpha position x between dates to a specified fraction of y. The ""limit_volume"" can be in the range of 0 to 1. Also, please be aware of the scaling for x and y. Besides setting y as adv20 or volume related data, you can also set y as a constant.",,
+ts_step,Time Series,"[""REGULAR""]",ts_step(1),"Returns a counter of days, incrementing by one each day.",ALL,/operators/ts_step
+ts_decay_exp_window,Time Series,"[""REGULAR""]","ts_decay_exp_window(x, d, factor = f)",Returns exponential decay of x with smoothing factor for the past d days,,/operators/ts_decay_exp_window
+ts_quantile,Time Series,"[""REGULAR""]","ts_quantile(x,d, driver=""gaussian"" )",Calculates the ts_rank of the input and transforms it using the inverse cumulative distribution function (quantile function) of a specified probability distribution (default: Gaussian/normal). This helps to normalize or reshape the distribution of your data over a rolling window.,ALL,/operators/ts_quantile
+ts_delta,Time Series,"[""REGULAR""]","ts_delta(x, d)",Calculates the difference between a value and its delayed version over a specified period. Useful for measuring changes or momentum in time-series data.,ALL,/operators/ts_delta
+ts_delay,Time Series,"[""REGULAR""]","ts_delay(x, d)",Returns the value of a variable x from d days ago. Use this operator to access historical data points by specifying the desired time lag in days.,ALL,/operators/ts_delay
+ts_rank,Time Series,"[""REGULAR""]","ts_rank(x, d, constant = 0)","Ranks the value of a variable for each instrument over a specified number of past days, returning the rank of the current value (optionally adjusted by a constant). Useful for normalizing time-series data and highlighting relative performance over time.",ALL,/operators/ts_rank
+days_from_last_change,Time Series,"[""REGULAR""]",days_from_last_change(x),Calculates the number of days since the last change in the value of a given variable.,ALL,/operators/days_from_last_change
+ts_backfill,Time Series,"[""REGULAR""]","ts_backfill(x,lookback = d, k=1)","Replaces missing (NaN) values in a time series with the most recent valid value from a specified lookback window, improving data coverage and reducing risk from missing data.",ALL,/operators/ts_backfill
+hump,Time Series,"[""REGULAR""]","hump(x, hump = 0.01)",Limits amount and magnitude of changes in input (thus reducing turnover),ALL,/operators/hump
+ts_av_diff,Time Series,"[""REGULAR""]","ts_av_diff(x, d)","Calculates the difference between a value and its mean over a specified period, ignoring NaN values in the mean calculation. In short, it returns x – ts_mean(x, d) with NaNs ignored.",ALL,/operators/ts_av_diff
+ts_arg_min,Time Series,"[""REGULAR""]","ts_arg_min(x, d)","Returns the number of days since the minimum value occurred in a time series over the past d days. If today's value is the minimum, returns 0; if it was yesterday, returns 1, and so on.",ALL,/operators/ts_arg_min
+ts_arg_max,Time Series,"[""REGULAR""]","ts_arg_max(x, d)","Returns the number of days since the maximum value occurred in the last d days of a time series. If today's value is the maximum, returns 0; if it was yesterday, returns 1, and so on.",ALL,/operators/ts_arg_max
+last_diff_value,Time Series,"[""REGULAR""]","last_diff_value(x, d)",Returns the most recent value of x from the past d days that is different from the current value of x.,ALL,/operators/last_diff_value
+vector_neut,Cross Sectional,"[""REGULAR""]","vector_neut(x, y)","For given vectors x and y, it finds a new vector x* (output) such that x* is orthogonal to y",,/operators/vector_neut
+truncate,Cross Sectional,"[""REGULAR""]","truncate(x,maxPercent=0.01)","Operator truncates all values of x to maxPercent. Here, maxPercent is in decimal notation",,/operators/truncate
+regression_neut,Cross Sectional,"[""REGULAR""]","regression_neut(y, x)",Conducts the cross-sectional regression on the stocks with Y as target and X as the independent variable,,/operators/regression_neut
+normalize,Cross Sectional,"[""REGULAR""]","normalize(x, useStd = false, limit = 0.0)","Centers a daily cross section by subtracting the market mean; optionally divide by the cross sectional standard deviation and clamp the result to [?limit, +limit]. NaNs are ignored in mean/std.",ALL,/operators/normalize
+quantile,Cross Sectional,"[""REGULAR""]","quantile(x, driver = gaussian, sigma = 1.0)","Ranks and shifts a vector of Alpha values, then applies a chosen statistical distribution (gaussian, cauchy, or uniform) to reduce outliers. The sigma parameter controls the scale of the output.",ALL,/operators/quantile
+scale,Cross Sectional,"[""REGULAR""]","scale(x, scale=1, longscale=1, shortscale=1)",Scales the input so that the sum of absolute values across all instruments equals a specified book size. Allows separate scaling for long and short positions using optional parameters.,ALL,/operators/scale
+winsorize,Cross Sectional,"[""REGULAR""]","winsorize(x, std=4)","Winsorize limits values in a data to within a specified number of standard deviations from the mean, reducing the impact of extreme outliers. Note: recommended std values range from 2 to 5: std = 2, 3, 4, 5 removes approximately 4.5%, 0.27%, 0.01%, and 0.0001% of extreme values, respectively (higher std removes fewer extremes).",ALL,/operators/winsorize
+zscore,Cross Sectional,"[""REGULAR""]",zscore(x),Z-score is a numerical measurement that describes a value's relationship to the mean of a group of values. Z-score is measured in terms of standard deviations from the mean,ALL,/operators/zscore
+rank,Cross Sectional,"[""REGULAR""]","rank(x, rate=2)","Ranks the values of the input x among all instruments, returning numbers evenly spaced between 0.0 and 1.0. Useful for normalizing data and reducing the impact of outliers.",ALL,/operators/rank
+vec_avg,Vector,"[""REGULAR""]",vec_avg(x),"Calculates the mean (average) of all elements in a vector field for each instrument and date, converting vector data to a single matrix value.",ALL,/operators/vec_avg
+vec_max,Vector,"[""REGULAR""]",vec_max(x),Maximum value form vector field x,,
+vec_min,Vector,"[""REGULAR""]",vec_min(x),Minimum value form vector field x,,
+vec_range,Vector,"[""REGULAR""]",vec_range(x),Difference between maximum and minimum element in vector field x,,
+vec_stddev,Vector,"[""REGULAR""]",vec_stddev(x),Standard Deviation of vector field x,,
+vec_sum,Vector,"[""REGULAR""]",vec_sum(x),Calculates the sum of all values in a vector field.,ALL,/operators/vec_sum
+vec_count,Vector,"[""REGULAR""]",vec_count(x),Number of elements in vector field x,,
+left_tail,Transformational,"[""REGULAR""]","left_tail(x, maximum = 0)","NaN everything greater than maximum, maximum should be constant",,/operators/left_tail
+trade_when,Transformational,"[""REGULAR""]","trade_when(x, y, z)","The trade_when operator changes Alpha values only when a specific condition is met, keeps previous values otherwise, and can close positions by assigning NaN under an exit condition. It is useful for reducing turnover and controlling when trades are executed.",ALL,/operators/trade_when
+right_tail,Transformational,"[""REGULAR""]","right_tail(x, minimum = 0)","NaN everything less than minimum, minimum should be constant",,/operators/right_tail
+bucket,Transformational,"[""REGULAR""]","bucket(rank(x), range=“0, 1, 0.1”, skipBoth=False, NaNGroup=False)
+or
+bucket(rank(x), buckets = “2,5,6,7,10”, skipBoth=False, NaNGroup=False)","The bucket operator creates custom groups by dividing data into buckets (ranges) based on ranked values of any data field. These buckets can then be used with group operators like group_neutralize, group_rank, group_zscore etc.",ALL,/operators/bucket
+group_mean,Group,"[""REGULAR""]","group_mean(x, weight, group)",Calculates the harmonic mean of a data field within each specified group.,ALL,/operators/group_mean
+group_cartesian_product,Group,"[""REGULAR""]","group_cartesian_product(g1, g2)","Merge two groups into one group. If originally there are len_1 and len_2 group indices in g1 and g2, there will be len_1 * len_2 indices in the new group.",,
+group_backfill,Group,"[""REGULAR""]","group_backfill(x, group, d, std = 4.0)","Fills missing (NaN) values for instruments within the same group by calculating a winsorized mean of all non-NaN values over the past d days. The winsorized mean is computed by trimming extreme values based on a specified standard deviation multiplier (std, default 4.0).",ALL,/operators/group_backfill
+group_zscore,Group,"[""REGULAR""]","group_zscore(x, group)","Calculates the Z-score of each value within its group, showing how far each value is from the group mean in terms of standard deviations. Useful for comparing values relative to their group.",ALL,/operators/group_zscore
+group_neutralize,Group,"[""REGULAR""]","group_neutralize(x, group)","Neutralizes Alpha values within each specified group by subtracting the group mean from each value. Groups can be industry, sector, country, or any custom grouping.",ALL,/operators/group_neutralize
+group_rank,Group,"[""REGULAR""]","group_rank(x, group)","Ranks each element within its group based on the input field, assigning a value between 0.0 and 1.0. This helps compare items within the same group, such as stocks in the same industry.",ALL,/operators/group_rank
+group_normalize,Group,"[""REGULAR""]","group_normalize(x, group, constantCheck=False, tolerance=0.01, scale=1)",Normalizes input such that each group's absolute sum is 1,,
+group_median,Group,"[""REGULAR""]","group_median(x, group)",All elements in group equals to the median value of the group.,,
+group_scale,Group,"[""REGULAR""]","group_scale(x, group)","Normalizes values within each group to a range between 0 and 1, making data comparable across different groups.",ALL,/operators/group_scale

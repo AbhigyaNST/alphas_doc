@@ -1,0 +1,70 @@
+{
+  "id": "getting-started-crowding-risk-neutralized-alphas",
+  "title": "Crowding Risk-Neutralized Alphas",
+  "lastModified": "2026-09-18T01:09:31.104359-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains crowding risk and why Alphas can become fragile when many investors hold similar positions. It shows how BRAIN’s crowding neutralization setting can help isolate a signal from crowded style exposures and reduce the risk of losses when crowded positions unwind.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "60fa508c-7fae-445e-91c9-b384e8a1bf8e"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "What is Crowding Risk?"
+      },
+      "id": "d45b2fbd-e486-40d7-89fb-6dd59a2a8254"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"lzldw\">Crowding risk occurs when many investors hold similar positions and trades. This similarity can create crowded positions and trades.</p><p data-block-key=\"gtjz6\">The main problems with crowded trades include:</p><ul><li data-block-key=\"lxdzc\">Unraveling of Crowded Positions: When too many investors try to sell the same positions simultaneously, prices can drop quickly, increasing losses.</li><li data-block-key=\"9yugs\">Reduced Profitability: Crowded trades can become less profitable as more investors enter the same positions. Initially, prices may rise, but they may become vulnerable to steep declines.</li></ul>",
+      "id": "d7e4c895-a7b1-4e9f-848d-ef8d013e144d"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Crowding Risk Factors"
+      },
+      "id": "080b00ba-7acf-4a3d-933f-580428718765"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"me6x9\"></p><p data-block-key=\"k8os3\">For <a href=\"https://platform.worldquantbrain.com/learn/documentation/advanced-topics/getting-started-risk-neutralized-alphas\">long-short neutralized Alphas</a>, several style risk factors can indicate crowding risk. For example, the momentum factor identifies high exposure to instruments with favorable medium-term price movements. Instruments with strong momentum can attract many investors, potentially leading to crowded trades.</p>",
+      "id": "45b5918b-10eb-4af6-9589-e6a222fd5a30"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "How to Simulate Crowding Risk-Neutralized Alphas"
+      },
+      "id": "53e2638d-494a-4be2-9dcb-4af05e7ee825"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"23guk\">To control for crowding risk in Alphas, BRAIN has developed a risk model with various risk factors. By monitoring and managing these factors, BRAIN consultants can potentially reduce the negative impacts of crowded trades and improve the robustness of Alphas. Consultants can neutralize Alphas using crowding risk factors by adjusting the settings to &#x27;CROWDING&#x27;:</p>",
+      "id": "ead888ba-4be8-4a28-a714-f3dfb3641ff1"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "crowding_risk_neu.png",
+        "width": 624,
+        "height": 362,
+        "fileSize": 50882,
+        "url": "https://api.worldquantbrain.com/content/images/cPHU6I2_nsgdPuZATjrV1FBSSmc=/318/original/crowding_risk_neu.png"
+      },
+      "id": "6697c8c1-8982-404d-88c5-218fb62907bc"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"odqdv\"></p><p data-block-key=\"id8ys\">settings_dict = {<br/> &quot;instrumentType&quot;: &quot;EQUITY&quot;,<br/> &quot;region&quot;: &quot;USA&quot;,<br/> &quot;universe&quot;: &quot;TOP3000&quot;,<br/> &quot;delay&quot;: 1,<br/> &quot;decay&quot;: 0,<br/> &quot;neutralization&quot;: &quot;CROWDING&quot;,<br/> &quot;truncation&quot;: 0.1,<br/> &quot;pasteurization&quot;: &quot;ON&quot;,<br/> &quot;unitHandling&quot;: &quot;VERIFY&quot;,<br/> &quot;nanHandling&quot;: &quot;ON&quot;,<br/> &quot;language&quot;: &quot;FASTEXPR&quot;,<br/> &quot;visualization&quot;: False<br/>}</p>",
+      "id": "df0eb9f8-bd35-450a-a265-d48916cc4bb0"
+    }
+  ],
+  "sequence": 15,
+  "category": "Neutralization",
+  "duration": "PT2M"
+}

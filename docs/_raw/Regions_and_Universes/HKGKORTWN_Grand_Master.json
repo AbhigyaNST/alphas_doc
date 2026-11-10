@@ -1,0 +1,20 @@
+{
+  "id": "getting-started-hkgkortwn",
+  "title": "HKG/KOR/TWN [Grand Master]",
+  "lastModified": "2026-09-18T04:21:34.701116-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains why Alpha research in Hong Kong, Korea, and Taiwan requires special care because market mechanisms, transaction costs, and short-selling constraints can change how signals behave. It helps users set realistic turnover, margin, and Max Trade expectations while encouraging region-specific datasets beyond general ASI ideas.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "ec0a91d7-878d-4a12-bd08-557bf8630266"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"luf36\">In Korea and Taiwan regions, “(-1) * Alpha” is not the opposite of the alpha due to the way we a trade is simulated and the more common presence of circuit breakers in these regions.</li><li data-block-key=\"mt2qv\">Due to the generally high trading cost, it is better to have higher margin that is at least 10 bps for Taiwan region.</li><li data-block-key=\"fouyr\">In Korea and Hong Kong regions, it is better to control the turnover to be less than 30%. If your alphas do have higher turnover, then the alphas should have higher Sharpe and Returns to cover those higher trading costs.</li><li data-block-key=\"g2lv8\">You can try alpha ideas that work well in ASI. In addition to your ideas that work in ASI, you can also try other specific ideas or specific datasets which are only available or have higher coverage in a certain country.</li><li data-block-key=\"bf3av\">When simulating or submitting Alphas in HKG, KOR or TWN regions, you have to turn on the &#x27;Max Trade&#x27; option.</li><li data-block-key=\"h6dpy\">To get started, besides price volume, we recommend to try out some of the below specific datasets:<ul><li data-block-key=\"qfeye\">HKG: <a href=\"https://platform.worldquantbrain.com/data/data-sets/model25?delay=1&amp;instrumentType=EQUITY&amp;limit=20&amp;offset=0&amp;region=HKG&amp;universe=TOP800\">model25</a>, <a href=\"https://platform.worldquantbrain.com/data/data-sets/other85?delay=1&amp;instrumentType=EQUITY&amp;limit=20&amp;offset=0&amp;region=HKG&amp;universe=TOP800\">other85</a></li><li data-block-key=\"k8l5j\">KOR: <a href=\"https://platform.worldquantbrain.com/data/data-sets/analyst25?delay=1&amp;instrumentType=EQUITY&amp;limit=20&amp;offset=0&amp;region=KOR&amp;universe=TOP600\">analyst25</a></li></ul></li></ul>",
+      "id": "4003d50d-84b2-455e-bef5-70c6efb0f08e"
+    }
+  ],
+  "sequence": 70,
+  "category": "Regions and Universes",
+  "duration": "PT1M"
+}

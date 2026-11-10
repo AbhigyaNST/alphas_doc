@@ -1,0 +1,81 @@
+{
+  "id": "getting-started-risk-neutralized-metrics",
+  "title": "Risk Neutralization: Default setting",
+  "lastModified": "2026-09-18T01:09:37.724937-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains risk-neutralized metrics and why they are useful for judging how much of an Alpha’s performance comes from genuine signal rather than known factor exposure. It shows how comparing original and risk-neutralized results can help users rank, improve, and select Alphas for submission.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "1d866165-3728-4512-8772-4ca6e38ac1c8"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Introduction"
+      },
+      "id": "35f3742b-6055-4df5-88f0-21367304b5a2"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"8g2re\">From now on when you simulate non–Risk Neutralized Alphas, you will see another set of PnLs and performance metrics. These new calculated statistics comes from the hypothesis case what if your Alpha is Risk Neutralized (using various Risk setting in Neutralization for Alphas for example “Slow Factors”, “Fast Factors”, “Slow + Fast Factors”).</p><p data-block-key=\"lp8rm\">These metrics won’t be calculated for Alpha already simulate with Risk Neutralization in setting.</p><p data-block-key=\"iz2ra\">If you don’t understand Risk-Neutralized Alpha concept, please check out this <a href=\"https://platform.worldquantbrain.com/learn/documentation/advanced-topics/getting-started-risk-neutralized-alphas\">documentation</a>.</p>",
+      "id": "3daea3d2-d248-4b38-9db6-4a894198c2df"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Where to find the metrics"
+      },
+      "id": "efa40dbb-f47c-45e7-a77c-9517b6650803"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"5svid\">The new UI on simulation results page looks like this:</p>",
+      "id": "2840147b-8129-46b8-8b7b-51a19fb0c4a2"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "risk_neu_metric.png",
+        "width": 624,
+        "height": 329,
+        "fileSize": 36429,
+        "url": "https://api.worldquantbrain.com/content/images/D_kBxd1IRG8yhWWpaUIqnJpt7oQ=/324/original/risk_neu_metric.png"
+      },
+      "id": "38adfdcd-25a7-4a20-a850-46131088dbe1"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"e3zdj\">The IS Summary also has new aggregate data:</p>",
+      "id": "b36d8d17-96a7-46a7-866d-fc412784ae9a"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "risk_neu_metric2.png",
+        "width": 624,
+        "height": 421,
+        "fileSize": 89825,
+        "url": "https://api.worldquantbrain.com/content/images/HViQLkaXGpDjpE16dlcR3_AbykE=/325/original/risk_neu_metric2.png"
+      },
+      "id": "58234076-95d2-4fff-895d-e91dae2e651b"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "How to use the metrics in your Alpha research"
+      },
+      "id": "5133b8b5-7102-401d-a884-3535b02e7235"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"2dgtz\"></p><p data-block-key=\"gmjty\">From these stats, you can examine how good does your Alphas capture market anomalies that&#x27;s not in the risk factor databases.</p><p data-block-key=\"6nkov\">Because the calculation isn’t exactly the same with Risk Neutralization in setting, the platform uses new technique to speed up the computation. So you will see a bit different performance between Risk Neutralized metrics and actual Risk Neutralization settings (in particular turnover won’t change in the Risk Neutralized metrics but normal Risk Neutralization settings can affect it).</p><p data-block-key=\"glil2\">In your Alphas optimization process or Alpha submission selections, you should rank Alphas by the ratio between Risk Neutralized Metrics&#x27; sharpe and original Alpha sharpe or between Risk Neutralized Metrics&#x27; returns and original Alpha returns and choose the one with higher ratio. An Alpha that retains more of its performance after Risk Neutralization means it&#x27;s less susceptible to risk factors’ drawdown &amp; volatility and maybe less correlated too.</p>",
+      "id": "2e40e92b-cfd1-4876-8318-e83abc706e9f"
+    }
+  ],
+  "sequence": 14,
+  "category": "Advanced Topics",
+  "duration": "PT2M"
+}

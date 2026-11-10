@@ -1,0 +1,105 @@
+{
+  "id": "visualization-tool",
+  "title": "Visualization Tool",
+  "lastModified": "2026-09-18T01:06:11.438513-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains the visualization tool and why seeing Alpha performance by sector, industry, and market-cap group can reveal hidden concentration risks. It helps consultants judge whether returns are broad and stable or overly dependent on a narrow group of stocks before resimulation or submission.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "7260d197-62c8-4c00-a6ce-d8ed8e1ae524"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Visualization Tool"
+      },
+      "id": "9347f953-64b8-475b-a2e9-2fdde680d8bd"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"ct552\">The visualization feature allows users to plot graphs of Alpha values and statistics, in addition to the PnL graph. It enables users to analyze the visualized output and fine tune Alphas before re-simulating or submitting.</p><p data-block-key=\"yfs17\">Running the visualization has an impact on simulation speed, so be judicious in utilizing this feature. By default this feature is turned off but can be turned on in simulation settings. Visualization data for older Alphas is only available for a week after simulation date.</p><p data-block-key=\"v4quv\"></p>",
+      "id": "352f243d-7975-42b5-85cb-6f355601e702"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "Term",
+            "Usage"
+          ],
+          [
+            "Coverage",
+            "Number or percentage of instruments with non-NAN Alpha values"
+          ],
+          [
+            "Size",
+            "Amount of money allocated as percentage of booksize"
+          ],
+          [
+            "PNL",
+            "PNL attributed to the relevant set of instruments"
+          ],
+          [
+            "Sharpe",
+            "Sharpe value of associated PNL stream"
+          ],
+          [
+            "Capitalization",
+            "Quintile of market capitalization of underlying stock"
+          ],
+          [
+            "Industry / Sector",
+            "Market grouping (scroll down to the bottom of the page for the full list of sectors and industries)"
+          ]
+        ],
+        "firstRowIsTableHeader": true,
+        "firstColIsHeader": false
+      },
+      "id": "b74b4c0f-a7e6-41ab-88fc-8cb3d95c2968"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Available Graphs by Category"
+      },
+      "id": "919640f3-5820-4aa9-a527-ddc15a5ee931"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"ooo1z\"></p><p data-block-key=\"v4zyl\"><b>Coverage</b></p><ul><li data-block-key=\"n5r17\">Alpha Coverage</li><li data-block-key=\"oadam\">Coverage by Industry</li><li data-block-key=\"cfvjq\">Coverage by Sector</li></ul><p data-block-key=\"z5yb0\"><i>‘Coverage’ denotes the average number of stocks whose value change each day.</i></p><p data-block-key=\"lb4rp\"><b>Size</b></p><ul><li data-block-key=\"dcbfq\">Average Size by Capitalization</li><li data-block-key=\"m05v7\">Average Size by Industry</li><li data-block-key=\"wb77h\">Average Size by Sector</li></ul><p data-block-key=\"seuk9\"><b>PNL</b></p><ul><li data-block-key=\"5ehch\">PNL by Capitalization</li><li data-block-key=\"wtbn9\">PNL by Industry</li><li data-block-key=\"d05ly\">PNL by Sector</li></ul><p data-block-key=\"mhdus\"><b>Sharpe</b></p><ul><li data-block-key=\"mkesu\">Sharpe by Capitalization</li><li data-block-key=\"8i50d\">Sharpe by Industry</li><li data-block-key=\"6gvc7\">Sharpe by Sector</li></ul><p data-block-key=\"dpxtj\"><b>Others</b></p><ul><li data-block-key=\"n7f19\">Turnover with Time</li><li data-block-key=\"75fma\">Industry Average value with Time</li><li data-block-key=\"l85wk\">Sector Average value with Time<br/></li></ul>",
+      "id": "696c41ee-ca6c-4d9f-ba0e-c3e868ddc766"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips to Analyze the Graphs"
+      },
+      "id": "6cf17836-aa42-4036-833c-de3c5d529ad0"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"b7m31\"></p><ol><li data-block-key=\"x5050\">Highly varying turnover or average Alpha value with time should be avoided.</li><li data-block-key=\"9nows\">Very large booksize concentrated on low cap or one sector or industry is not good, as it potentially entails low liquidity or diversification.</li><li data-block-key=\"a6pi6\">Filtering out a lot of stocks in your simulation leading to less diversification across caps, sector or industry is not a good practice. This could be checked using the coverage plots.</li><li data-block-key=\"mks1x\">Sharpe contribution from different industries and sectors towards the overall Sharpe indicates diversification.</li><li data-block-key=\"3xe8k\">Good Sharpe in high cap stocks along with low caps makes a good Alpha.</li></ol>",
+      "id": "92a48b09-d453-4023-b861-da530967eb96"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Full List of Sectors & Industries"
+      },
+      "id": "06528010-b659-44eb-afbd-549a0f6772a2"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"p6tjj\"></p><p data-block-key=\"hm2hj\"><b>Sector</b></p><ul><li data-block-key=\"ek5qv\">Distribution Services</li><li data-block-key=\"8o4hu\">Communications</li><li data-block-key=\"70yhp\">Transportation</li><li data-block-key=\"k14e3\">Utilities</li><li data-block-key=\"hqoup\">Retail Trade</li><li data-block-key=\"xok30\">Miscellaneous</li><li data-block-key=\"251l1\">Consumer Durables</li><li data-block-key=\"aonbn\">Industrial Services</li><li data-block-key=\"58ytp\">Commercial Services</li><li data-block-key=\"y7obl\">Consumer Non-Durables</li><li data-block-key=\"bm06h\">Process Industries</li><li data-block-key=\"wrr21\">Consumer Services</li><li data-block-key=\"gdedg\">Technology Services</li><li data-block-key=\"bs7dd\">Producer Manufacturing</li><li data-block-key=\"pco0u\">Health Technology</li><li data-block-key=\"8h8uc\">Energy Minerals</li><li data-block-key=\"y0cey\">Electronic Technology</li><li data-block-key=\"3a4bo\">Non-Energy Minerals</li><li data-block-key=\"3r9zs\">Finance</li><li data-block-key=\"dq6ri\">-99999 (Uncategorized)</li></ul><p data-block-key=\"wcp2j\"><b>Industry</b></p><ul><li data-block-key=\"5gyi0\">All Unclassified Establishments</li><li data-block-key=\"ow1co\">Public Administration</li><li data-block-key=\"1rtzo\">Other Services (except Public Administration)</li><li data-block-key=\"ztl5w\">Educational Services</li><li data-block-key=\"aw1rv\">Arts Entertainment and Recreation</li><li data-block-key=\"anfez\">Agriculture Forestry Fishing and Hunting</li><li data-block-key=\"zc181\">Health Care and Social Assistance</li><li data-block-key=\"wjjz1\">Accommodation and Food Services</li><li data-block-key=\"7bjqy\">Administrative and Support and Waste Management and Remediation Services</li><li data-block-key=\"e7tg4\">Transportation and Warehousing</li><li data-block-key=\"tzked\">Construction</li><li data-block-key=\"w5o9c\">Wholesale Trade</li><li data-block-key=\"prfi5\">Utilities</li><li data-block-key=\"gz3lw\">Retail Trade</li><li data-block-key=\"x32le\">Real Estate and Rental and Leasing</li><li data-block-key=\"3v93o\">Management of Companies and Enterprises</li><li data-block-key=\"nanyj\">Professional Scientific and Technical Services</li><li data-block-key=\"rpb7g\">Information</li><li data-block-key=\"36xyt\">Finance and Insurance</li><li data-block-key=\"eu7xq\">Mining Quarrying and Oil and Gas Extraction</li><li data-block-key=\"ke3mc\">Manufacturing</li><li data-block-key=\"y9spv\">-99999 (Uncategorized)</li></ul>",
+      "id": "c653be59-a1e9-4fef-8537-835618e97cf1"
+    }
+  ],
+  "sequence": 11,
+  "category": "Consultant Information",
+  "duration": "PT3M"
+}

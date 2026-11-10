@@ -1,0 +1,215 @@
+{
+  "id": "osmosis-allocation-guide-consultants",
+  "title": "Osmosis Allocation Guide for Consultants",
+  "lastModified": "2026-09-18T01:11:35.058419-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains Osmosis and why a consultant’s personal allocation across Alphas affects payout multipliers, Genius performance metrics, and leaderboard standing. It helps users understand allocation rules, weekly locking, scope requirements, tracking, and practical ways to build a stable, diversified Alpha mix.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "d8e1e685-a56c-4b56-9589-77752d66919d"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "What is Osmosis?"
+      },
+      "id": "6cffa5a1-bcf1-459c-8b40-c1d1f0053f18"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"3vreo\">Osmosis is your <b>personal combo of Alphas</b>, built from the <b>points you allocate</b> across your Alpha pool in different scopes (region x delay). The Platform then:</p><ul><li data-block-key=\"kzfkk\">Computes the PNL of this combination of Alphas every day</li><li data-block-key=\"0oh2e\">Uses this combo performance:<ul><li data-block-key=\"t16c5\">As a theme multiplier in daily <b>base payment</b></li><li data-block-key=\"kgpei\">As <a href=\"https://platform.worldquantbrain.com/genius/\"><b>Combined Osmosis Performance</b></a> in Genius to help inform <b>quarterly payments</b></li><li data-block-key=\"k9jol\">As Daily Osmosis Rank metric on the <a href=\"https://platform.worldquantbrain.com/competition/consultant\"><b>leaderboard</b></a></li></ul></li></ul>",
+      "id": "71336353-fb38-4f90-95dc-e4da4c4fa1a0"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "How to allocate points?"
+      },
+      "id": "b287471e-37e0-4b82-97db-7049f42098b3"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"lfilx\">1. Use the Properties section on the Alphas&#x27; page to allocate Osmosis points to Alphas:</p>",
+      "id": "a70f46ef-4bb1-44da-a2e5-0ffae49bd4b7"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "Picture3.png",
+        "width": 624,
+        "height": 193,
+        "fileSize": 17172,
+        "url": "https://api.worldquantbrain.com/content/images/0W6oUj1dLWqdu1BIyiuiAmx35vY=/455/original/Picture3.png"
+      },
+      "id": "61e0cafb-605d-4b65-96a8-b38d5c53f024"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"qnpss\">2. Use the Submitted Alphas table to edit Osmosis points directly</p>",
+      "id": "f2e1e66d-483d-4a69-9786-193027991797"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "Osmosis 1.png",
+        "width": 121,
+        "height": 125,
+        "fileSize": 2940,
+        "url": "https://api.worldquantbrain.com/content/images/DV3xTsEJ0CKYiTgOgOvUHK7x1Nw=/457/original/Osmosis_1.png"
+      },
+      "id": "0000075c-20c4-43a1-9b69-39ecdf0b3e67"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"lb8bq\">Hover over the Osmosis Points cell for any Alpha: you will see a text cursor and an edit icon appear. Click and update your Osmosis Points value directly inline. After saving:</p><ul><li data-block-key=\"zhvdp\">✅A green check mark confirms the update was successful. It does not mean that you have allocated the right number of points or Alphas across scopes</li><li data-block-key=\"bakbg\">❗A red warning icon appears if the update failed, along with a tooltip explaining the reason</li></ul><p data-block-key=\"zqq4z\">Hover over the green preview icon in the leftmost column to view the Alpha expression.</p>",
+      "id": "590449c0-83ae-4ef1-a2ec-ae008066a904"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"9c759\">3. Osmosis Scale</p><p data-block-key=\"9pkdi\">Osmosis Scale allows you to automatically scale all eligible scopes to 100,000 Osmosis points in a single action, saving you the time of adjusting each scope manually.</p><p data-block-key=\"qoice\"></p><p data-block-key=\"7x2zu\"><b>How to Use</b></p><p data-block-key=\"2qjj9\">1. Go to the Alphas page and select the Submitted tab.</p><p data-block-key=\"gzq6m\">2. The Osmosis Scale button sits right next to the Filter button and is clickable only when you have allocated points to at least 10 Alphas, and they need to be scaled to 100,000 Osmosis points. If a scope already has 100,000 points, or has fewer than 10 Alphas allocated, the Osmosis Scale button will be disabled.</p>",
+      "id": "ac4dd3cb-0cac-443a-adc8-653f789531e7"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "OS 1.png",
+        "width": 365,
+        "height": 128,
+        "fileSize": 5156,
+        "url": "https://api.worldquantbrain.com/content/images/hOi1PYviMvwQ8npXbPrwMxHaGlI=/461/original/OS_1.png"
+      },
+      "id": "fb6b9478-ca9c-4674-8756-0b6722e0fe9b"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"qwqqf\">3. A dialog will appear listing all your eligible scopes, showing the current point allocation and the number of Alphas in each scope.</p>",
+      "id": "5bb4227c-8b27-4b17-a9d5-5d337a88f231"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "OS 2.png",
+        "width": 545,
+        "height": 279,
+        "fileSize": 20323,
+        "url": "https://api.worldquantbrain.com/content/images/SgajZ4odCr4O6a58OluX9wC1YMQ=/462/original/OS_2.png"
+      },
+      "id": "1822025b-603a-444b-9ade-19e7f9422e42"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"wtr5v\">4. Click &quot;Scale All to 100,000&quot; to confirm to scale all listed scopes at once.</p>",
+      "id": "494a0645-1e4c-4ee5-86bc-8abb28be07f1"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Allocation Requirements"
+      },
+      "id": "ddebaa4b-c548-4bc8-bce5-3d93343f7677"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"0smcc\">You need to allocate Osmosis points each to at least 3 scopes (regionxdelay combinations allowed by your Genius level). Within each scope, you need to allocate exactly 100k points to at least 10 Alphas.</p><p data-block-key=\"7tlt9\">You can allocate to</p><ul><li data-block-key=\"q682g\">All types of Alphas: regular, Atom, Power Pool, SuperAlphas etc</li><li data-block-key=\"m32hr\">Alphas submitted at any date, not just recent submissions</li></ul><p data-block-key=\"o2i1e\">No minimum per Alpha, but total allocation per scope must equal 100,000 points.</p><p data-block-key=\"h5ln0\"><b>Points lock weekly</b></p><ul><li data-block-key=\"nc3sq\">Your allocations as of every <b>Sunday 23:59 hrs EST</b> are then used for <b>all daily combo calculations after 7 days</b>.<ul><li data-block-key=\"8zqby\">Example: points that lock in on 8th Feb 2026 (Sunday) will be used for the <a href=\"https://platform.worldquantbrain.com/competition/consultant\">daily combo calculations</a> starting from 16th Feb to 22nd Feb.</li></ul></li><li data-block-key=\"je7a8\">You can change points anytime. There is no penalty for changing allocations multiple times, but only the <b>allocations</b> <b>as of Sunday night</b> are used.</li></ul>",
+      "id": "4a365545-a178-4ad3-8954-705f7a84c450"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "Osmosis 3.png",
+        "width": 1368,
+        "height": 242,
+        "fileSize": 33795,
+        "url": "https://api.worldquantbrain.com/content/images/tEa6Cjv7VkwWMTUcvqFJwMQvcnQ=/459/original/Osmosis_3.png"
+      },
+      "id": "60e5514c-44f2-4eef-8c8d-2893b8beb21e"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Where can you see your Osmosis allocation?"
+      },
+      "id": "620321ed-31d8-4158-84e4-28c33feea81c"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"38z4u\">On the <a href=\"https://platform.worldquantbrain.com/genius/status\">Genius Status Page</a> &gt; Osmosis Allocation</li></ul>",
+      "id": "a181fbf5-c788-4d74-b8f9-b0cf7112605c"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "Picture2.png",
+        "width": 624,
+        "height": 294,
+        "fileSize": 30126,
+        "url": "https://api.worldquantbrain.com/content/images/tSy3W_gwIkuWJYkAe6HEPvxA-Ps=/454/original/Picture2.png"
+      },
+      "id": "517bdeb1-2bc5-45a8-ae0c-794d9586ab04"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"5lq9k\"></p><ul><li data-block-key=\"zn4z5\">On the <a href=\"https://platform.worldquantbrain.com/genius/status\">Genius Status Page</a> &gt; Combined Osmosis Performance: It shows your long‑term after‑cost Sharpe from stitching weekly Osmosis combos over the Genius quarter.</li><li data-block-key=\"b0st5\">As Daily Osmosis Rank on <a href=\"https://platform.worldquantbrain.com/competition/consultant\">Consultant Leaderboard</a>: It is the Rank of one day’s PNL of your Osmosis Combo across all consultants, updated daily using your Osmosis allocation from two Sundays ago. It will remain blank if you don’t have a valid allocation.</li></ul>",
+      "id": "c402de3e-efce-4191-ae5e-0267f1d51cfe"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Daily Osmosis Rank (base payments)"
+      },
+      "id": "48113f09-1155-4c90-ba3c-65e093b1812f"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"ytx5g\"></p><ul><li data-block-key=\"jui1t\">For each scope (regionxdelay), with your Osmosis points allocation from two Sundays ago, the Platform computes one day’s PNL (from 2 years ago in the out-sample period)</li><li data-block-key=\"nvkpy\">Then ranks each scope’s PNL among consultants, to get your scope rank</li><li data-block-key=\"3rmhi\">Next, calculates average of all your scope ranks. This average is your Daily Osmosis Rank, which is applied as a quality factor multiplier for your daily base payment. Value of the multiplier ranges between 1 and 2 and is updated daily</li><li data-block-key=\"54c3i\">Averaging only considers scopes where you&#x27;ve allocated points (not all possible scopes).</li><li data-block-key=\"qyg9x\">Performance is not proportional to number of scopes, though variety helps minimize drawdowns. Diversifying across regions helps with portfolio robustness.</li></ul>",
+      "id": "aaf9b838-8447-459f-88aa-bb0db6e992e8"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Combined Osmosis Performance (Genius combo)"
+      },
+      "id": "fdec3151-7904-4990-8bf2-e553aad61f66"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"k2enk\"></p><ul><li data-block-key=\"pckkp\">Each Sunday’s Osmosis allocation generates your after-cost PNL. All your after-cost PNLs across Sundays are combined to generate after-cost Sharpe for the quarter, which is the Combined Osmosis Performance.</li><li data-block-key=\"zpecj\">Updated every 4-6 weeks.</li><li data-block-key=\"2i0m1\">You need to have a correct allocation of points for at least 6 weeks in previous 3-months to be eligible for getting a Combined Osmosis Performance</li></ul><p data-block-key=\"adeu7\">Max of Combined Alpha Performance, Combined Selected Alphas Performance, Combined Power Pool Alpha Performance and Combined Osmosis Performance is used in the Genius eligibility criteria.</p>",
+      "id": "840513da-1ac6-4909-a72d-b664f62358e4"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Can Combined Osmosis performance change significantly from month to month, if I made no changes to my Osmosis allocations?"
+      },
+      "id": "53d77525-24cb-4261-be4b-21e049503346"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"jyurf\"></p><p data-block-key=\"v5ra6\">Combined Osmosis performance is evaluated on a <b>short rolling 3-month period</b>, so significant performance variations can happen even when your Osmosis selection remains unchanged. Even with identical Osmosis Alpha selections across successive periods, we observe high dispersion in results, though correlations do exist. Other Combined Alpha performance metrics are evaluated on longer rolling periods, which is why you may see different volatility patterns across your performance metrics.</p><p data-block-key=\"k8s3i\"><b>What this means for you:</b></p><ul><li data-block-key=\"pc2zd\">It is normal to see some fluctuation in your Combined Osmosis Performance across months, especially given the short evaluation window</li><li data-block-key=\"l29i4\">Focus on consistent, quality Osmosis allocations rather than reacting to short-term performance swings</li><li data-block-key=\"xvo9t\">Monitor your performance trends over the full quarter for a more accurate picture of your combo&#x27;s effectiveness</li></ul>",
+      "id": "d1e9d5fd-d4cd-44b5-b42d-ef0a789d0f54"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Actionable tips for potentially building a good Osmosis combo"
+      },
+      "id": "1b7f1508-3040-4e1f-babf-a3c876b1e6ea"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"52fmf\"></p><ul><li data-block-key=\"xqrjo\"><b>Start with your best Alphas:</b> Prioritize Alphas with unique ideas, no random mixing of expressions. Don’t waste points on Alphas that don&#x27;t have a strong economic rationale.<ul><li data-block-key=\"wwmgi\"><b>Diversify across scopes:</b> Use more than the bare minimum of 3 scopes when possible.</li></ul></li></ul><p data-block-key=\"7rq14\">Mix major scopes (e.g., USA, GLB) with others where you have strong Alphas. Allocate many Alphas in regions that have been prioritized in opportunity webinars. Check the <a href=\"https://platform.worldquantbrain.com/genius/status#:~:text=Osmosis%20Allocation%20(min%203%20scopes)\">Osmosis Allocation table</a> for balance points remaining to be allocated.</p><ul><li data-block-key=\"2ydqu\"><ul><li data-block-key=\"y6xsn\"><b>Diversify across datasets</b>: Avoid concentration in specific datasets or category. Cover many datasets and categories to avoid large drawdowns. Occam&#x27;s Razor: If you have multiple submissions on the same dataset using the same idea, prioritize the simpler one with strongest economic rationale</li><li data-block-key=\"njbyw\"><b>Diversify across Operators and Neutralizations:</b> Each operator or neutralization has nuances. Overexposure to one can cause all your Alphas to drawdown together and led to negative returns in Combined Osmosis Performance.</li><li data-block-key=\"0clhh\"><b>Control volatility:</b> Concentrated combos can create big swings. Aim for steady positive returns with reasonable risk<b>.</b></li><li data-block-key=\"ju630\"><b>Avoid frequent radical reshuffles:</b> Use gradual adjustments and evaluate over weeks, not days. So you can track impact of your adjustments.</li></ul></li><li data-block-key=\"qvuyh\">Use <b>SuperAlpha selection table</b> to analyze a large pool of Alphas. This will help you diversify your signals across Datasets, Dataset categories, Turnover ranges and Alpha ideas</li><li data-block-key=\"103i2\">Add a custom tag to your important Alphas, so you can filter them quickly later</li><li data-block-key=\"qjtq4\">Exclude Alphas whose Sharpe ratio declines by approximately 60% or more after investability constraints are applied, except when:<br/> - the Alpha is unique within the selection, or<br/>- the Alpha is based on a different dataset</li><li data-block-key=\"pl94i\">Classify Alphas by turnover into buckets: &lt;10%, 10–20%, and &gt;20%; avoid alphas with turnover above 20% unless their investability-constrained Sharpe remains robust</li><li data-block-key=\"8jpar\">Re-run simulations for previously submitted Alphas without MaxTradeOn by enabling MaxTradeOn; retain these Alphas only if their performance remains satisfactory</li><li data-block-key=\"uum0d\">Use Alphas lists to evaluate intra-set correlations and eliminate Alphas that exhibit high mutual correlation</li><li data-block-key=\"bn55a\">Examine individual PnL profiles and remove Alphas that experience drawdowns concurrently with others</li><li data-block-key=\"egljn\">Apply SuperAlpha to the shortlisted set and assess the combined Sharpe ratio after investability constraints and MaxTradeOn are incorporated</li><li data-block-key=\"bpk4w\">Consider high-quality legacy Alphas developed prior to PowerPool or Atom; the Osmosis Alpha set is not limited to those newer Alpha types</li><li data-block-key=\"ky496\">Aim to include a larger number of high-quality Alphas, as this generally enhances Osmosis combination performance</li></ul>",
+      "id": "b7da02f7-c018-44cf-9458-b5849228f528"
+    }
+  ],
+  "sequence": 120,
+  "category": "Consultant Info",
+  "duration": "PT5M"
+}

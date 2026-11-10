@@ -1,0 +1,20 @@
+{
+  "id": "usa-top2000-asi-minvol10m-asi-top500-glb-minvol10m-universe",
+  "title": "USA TOP2000, ASI MINVOL10M, ASI TOP500, GLB MINVOL10M Universe",
+  "lastModified": "2026-09-18T04:22:19.031944-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article introduces four newer universes and explains why they were created to support more diverse, less correlated, and more liquid Alpha research. It helps users understand how higher average liquidity and broader universe choices can reduce transaction costs and better support high-turnover signals.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "e84eb97e-e815-46de-a74f-2bbb574e9f49"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"yaigf\"></p><p data-block-key=\"hxvbg\">New universes are onboarded:</p><ul><li data-block-key=\"2plam\">USA TOP2000</li><li data-block-key=\"1x4yn\">ASI TOP500, ASI MINVOL10M</li><li data-block-key=\"5uc4h\">GLB MINVOL10M</li></ul><p data-block-key=\"l3ngh\">Those new universes should enable creation of diversified, low correlated signals.</p><p data-block-key=\"jk4iq\">Comparing to popular MINVOL1M and TOP3000 universes, stocks within those universes are having higher average liquidity, indicating lower trading cost, which should be more suitable to create higher turnover signals. Please refer to <a href=\"https://platform.worldquantbrain.com/learn/documentation/interpret-results/understanding-pnl-realization-horizon\">Understanding PnL Realization Horizon | WorldQuant BRAIN</a> for more details.</p><p data-block-key=\"y5qdm\">Make sure to consider those universes in research process.</p>",
+      "id": "b44b0e41-d9c2-4be8-96e5-08749aff81fa"
+    }
+  ],
+  "sequence": 34,
+  "category": "Regions and Universes",
+  "duration": "PT1M"
+}

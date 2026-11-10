@@ -1,0 +1,212 @@
+{
+  "id": "consultant-faqs",
+  "title": "Consultant FAQs",
+  "lastModified": "2026-08-26T07:09:14.815883-04:00",
+  "content": [
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Does my Alpha need to pass all the OSTESTS in order to get PROD status?"
+      },
+      "id": "b60fcd06-6a16-487f-bf43-961ae2e64c64"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"426v8\"></p><p data-block-key=\"6a3fq\">Answer: The Alphas you submit in BRAIN platform have to pass a set of tests in order to qualify for PROD status. These tests include mandatory and non-mandatory tests. An Alpha needs to pass all the mandatory tests to be eligible to get PROD status. If an Alpha is failing some non-mandatory tests, it can still make it to PROD.</p><p data-block-key=\"tgo44\">Also note that, we mark an Alpha as OSTEST-FAIL if it fails ‘one or more tests’ (mandatory or non mandatory). For example, even if an Alpha fails a non mandatory test, it will be marked as OSTEST-FAIL, and if you check the Alpha details of this Alpha you might see the status of OTHER as FAIL. However this does not imply that such an Alpha cannot go to PROD.</p><p data-block-key=\"71k0h\">To summarize, it’s possible that an Alpha that had a status of OSTEST-FAIL initially, can eventually move to OSTEST2-PENDING and finally to PROD.</p><p data-block-key=\"6bevi\">Few mandatory tests include:</p><ul><li data-block-key=\"3rp42\">For Delay 1 Alphas:SubUnivSharpe&gt; sqrt(252) * max(0.065, sqrt(subuniverse_size / largest_universe_size) * 0.15)</li><li data-block-key=\"i8xnn\">For Delay 0 Alphas: SubUnivSharpe&gt; sqrt(252) * max(0.10, sqrt(subuniverse_size / largest_universe_size) * 0.25)</li></ul><p data-block-key=\"fvtf2\">Following are the sharpe threshold to avoid sub universe warning:</p><p data-block-key=\"oz7lg\"></p>",
+      "id": "21ec9c07-65ca-490e-9dbb-f3752540d16b"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "Universe",
+            "Required Sharpe"
+          ],
+          [
+            "TOP 2000",
+            "1.944"
+          ],
+          [
+            "TOP 1000",
+            "1.37"
+          ],
+          [
+            "TOP500",
+            "1.03"
+          ],
+          [
+            "TOP 200",
+            "-"
+          ]
+        ],
+        "firstRowIsTableHeader": true,
+        "firstColIsHeader": false
+      },
+      "id": "652e68f5-1f3b-4557-8a42-3df9c30eef5b"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"k4mo1\"></p><p data-block-key=\"14dqm\">Note: This test is just an approximation of the real test that gets run in OS TEST. If you encounter a warning, then verify if the signal is over-concentrated in the less liquid part of the universe and only submit Alphas once verified.<br/></p><p data-block-key=\"pe0fn\">Earlier, check Weight test was a part of the OSTESTS but now it has been included as a part of submission process.</p><p data-block-key=\"100gl\"></p>",
+      "id": "f790db4c-d0a0-4b5d-ba9f-32aa6664747f"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Could you please throw some light on the relevance of OS tab and production tab in BRAIN platform?"
+      },
+      "id": "2026ac0c-fa1c-41f5-aaa4-a68ffa4d2c95"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"di0v3\">Answer: Alphas undergo various evaluation tests and based on their performance in these tests, they qualify for further testing and eventually move to production.<br/>During the first round of out sample testing, the submitted Alphas are evaluated for various base tests (such as SubUniv, SuperUniv, CheckCorr, RankSharpe, CheckMemory etc.) in OS Tab.<br/>Alphas that pass most of the base tests move to the Production tab. Here, the Alphas are evaluated based on the performance tests (which include OSSharpe, New High, etc.). An Alpha usually takes longer to pass the performance tests as compared to the base tests.<br/>An overview of the Alpha life cycle:</p>",
+      "id": "80b45861-df1d-414f-9e22-f169d1bf1b51"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "consultant_FAQs_2",
+        "width": 632,
+        "height": 80,
+        "fileSize": 49062,
+        "url": "https://api.worldquantbrain.com/content/images/5_lD0CIpRj-RZWvLMedsmUoe3uw=/37/original/consultant_FAQs.PNG"
+      },
+      "id": "ea84e77c-ccce-4f01-8656-d08c0d7e9dd0"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Why is it that the Alphas tend to perform poorly for 5 year back testing period as compared to 2 year back testing period? Is there a generic solution to this problem?"
+      },
+      "id": "3072b594-1cf4-43c7-b5ea-fae06b4b892c"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"2hk0e\">Answer: Overfitting is one of the reasons why an Alpha tends to perform well in 2 years simulation duration but may not work for 5 years simulation duration. We normally have more confidence on the Alpha which is simulated for 5 years as compared to the one simulated for 2 years.<br/>Consider an Alpha based on quarterly fundamental data. On an average, you would have 4 data points a year for fundamental data. In a 2 year simulation you would end up fitting your Alpha, on the basis of just 8 data points – in which case there’s a good chance that you have overfitted your Alpha. With a 5 year simulation, you have 20 data points, and therefore more confidence in your Alpha. At the same time, it would be difficult to fit your Alpha for all the 5 years, effectively reducing your chances for overfitting.<br/>Therefore, in order to reduce overfitting risk, we have now removed the 2 year simulation option in favour of the 5 year option. So, now the simulation duration is fixed at 5 years.</p><p data-block-key=\"ddqk3\"></p><p data-block-key=\"1s9od\"></p>",
+      "id": "5194932e-f8f0-4f50-9d13-19ed561b4599"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Why is it that the Alphas tend to perform poorly for 5 year back testing period as compared to 2 year back testing period? Is there a generic solution to this problem?"
+      },
+      "id": "ae598b2d-21a2-4fbc-a63e-bc7fd431f780"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"o9a6u\">Answer: Overfitting is one of the reasons why an Alpha tends to perform well in 2 years simulation duration but may not work for 5 years simulation duration. We normally have more confidence on the Alpha which is simulated for 5 years as compared to the one simulated for 2 years.<br/>Consider an Alpha based on quarterly fundamental data. On an average, you would have 4 data points a year for fundamental data. In a 2 year simulation you would end up fitting your Alpha, on the basis of just 8 data points – in which case there’s a good chance that you have overfitted your Alpha. With a 5 year simulation, you have 20 data points, and therefore more confidence in your Alpha. At the same time, it would be difficult to fit your Alpha for all the 5 years, effectively reducing your chances for overfitting.<br/>Therefore, in order to reduce overfitting risk, we have now removed the 2 year simulation option in favour of the 5 year option. So, now the simulation duration is fixed at 5 years.</p><p data-block-key=\"t34gl\"></p><p data-block-key=\"791en\"></p>",
+      "id": "89771dc1-9e4c-4581-bd49-650884279e1b"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "What are the factors that contribute to change in the values of actual weight of an Alpha?"
+      },
+      "id": "2adc1d61-5de7-44ff-b310-417a9268f9f1"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"pklrz\">Answer: Actual weight is the actual usage (weight) of Alpha in a production strategy. It gets calculated and updated on a daily basis.<br/>If an Alpha is not performing well in past days, then there are chances that the actual weight may decrease. The current market scenario also might affect your actual weight. For example: if in the past few months markets have been volatile, then good chances that reversion Alphas would work better and therefore receive more weight.<br/>Therefore, it would be a good practice to keep track of market trends and accordingly tune your research. Note that the weight balance criteria are decided by PM’s and some minor fluctuations are expected in the short term. If you have a diversified set of Alphas in your inventory, the chances that some of them always have weight is higher. So try to build diversity in your personal Alpha pool.</p>",
+      "id": "54dec53e-c10c-4552-8ae4-2a695cdadb6e"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Will my Alphas with OSTEST-FAIL status get retested in future?"
+      },
+      "id": "07a5de8b-fdc9-4eef-b997-ea30bb79fda5"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"csovn\">Answer: An Alpha with OSTEST-FAIL status would imply that the Alpha is failing at least one of the out sample tests. The Alphas won’t be retested for the same tests. But if the Alpha is failing some non-mandatory out sample tests, then the testing process continues and the Alpha goes through further testing. However, if the Alpha fails some mandatory tests, it is not tested further. You can find more information about OSTEST-FAIL in Question 1.</p><p data-block-key=\"5hiqe\"></p>",
+      "id": "15f7c531-e7f4-4cd3-ace6-20d99e74c008"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "When exactly does my Alpha get simweight? I have few OSTEST-PENDING Alphas which have not been allocated sim weight while some PROD-DECM Alphas have sim weight."
+      },
+      "id": "e76d2ca3-2f02-4de7-ade9-8d63b52e6773"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"rixww\">Answer: Once the Alphas are OS tested, they get sim weight. This is based on performance of the Alpha in out sample testing. Your Alphas would start getting sim weights once they are evaluated in out sample testing.<br/>You may find PROD-DECM Alphas getting sim weight but this does not contribute to sim weight on leader board rankings.</p><p data-block-key=\"u85t7\"></p>",
+      "id": "83ef9546-2e55-4f3b-af5f-ac2a9ef1047e"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Which one (weight) should I look at when I evaluate the performance of my Alpha? Which one determines the Tier?"
+      },
+      "id": "bd4b0b67-a60c-44af-b0c0-4165b2587bdd"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"1nzjx\">Answer: The Alpha’s performance cannot be evaluated by judging a single parameter. The performance is evaluated on the basis of actual weight, sim weight, PNL, meta score, average fitness and few other proprietary metrics. In accordance with these parameters we derive a composite metrics and rank all the consultants. Depending on the distribution, we decide the criteria for each tier. This criterion is at the firm’s discretion and might be revised to ensure a normalized distribution across tiers as consultant numbers increase.</p><p data-block-key=\"y7bvm\"></p>",
+      "id": "7a10eed5-699c-43d4-8759-f2da68eb261d"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Which one (weight) should I look at when I evaluate the performance of my Alpha? Which one determines the Tier?"
+      },
+      "id": "13e0c2c9-992d-459d-9ef0-c60afc89d0cc"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"sbyh4\">Answer: The Alpha’s performance cannot be evaluated by judging a single parameter. The performance is evaluated on the basis of actual weight, sim weight, PNL, meta score, average fitness and few other proprietary metrics. In accordance with these parameters we derive a composite metrics and rank all the consultants. Depending on the distribution, we decide the criteria for each tier. This criterion is at the firm’s discretion and might be revised to ensure a normalized distribution across tiers as consultant numbers increase.</p><p data-block-key=\"fdrev\"></p>",
+      "id": "7fbb8ca8-6d42-4edb-9762-1a22257e502c"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "I would like to know the reason why my Tier changed from Tier I to \"Unassigned”?"
+      },
+      "id": "d0b23938-85de-449f-bd5e-b8c7ae47c46e"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"ui9vj\">Answer: Once you become a research consultant, you need to sign one year agreement with WorldQuant. Your tier is allotted to you and reshuffled on a regular basis, depending on your performance as a consultant. This introduces healthy competition and consultants to stay motivated to put in their best efforts. Further, it takes care that compensation is fair and performance based.<br/>As you complete one year, we expect you to have contributed to the Alpha pool substantially and accumulated good actual weight. This allows you to reap significant rewards from bonuses. As a result, the system automatically marks a consultant unassigned as he/she completes a year with us. Your new tier will be allocated after the next tier-reshuffle. In case your status is Unassigned and you have not completed a year with us, please reach out to BRAIN platform Support.</p><p data-block-key=\"a3499\"></p>",
+      "id": "89fb457b-6a62-45a4-92ff-1c1fde13261c"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Why do I get “Cannot submit Alpha, D0 submission quota has been reached” error?"
+      },
+      "id": "e9020d33-a720-4777-907a-37208a00e0f0"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"qg99x\">Answer: As a consultant, you will be able to submit up to 5 D0 Alphas in a given calendar month. So, please submit only your best D0 Alphas or just work on D1 Alphas.</p><p data-block-key=\"swluf\"></p>",
+      "id": "0c32a2b9-cb6d-406c-bcfc-13f825b6dbe8"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "My Sim3 Weight increased/decreased few days after the tier-reshuffling date. Will I be assigned a revised tier?"
+      },
+      "id": "e6d5ddd6-5430-4ef4-884e-d58c8123af5b"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"uomln\">Answer: The SimWeight values are taken on the same snapshot date for all the consultants. Since the simweight score is dynamic, it may increase or decrease based on the OS performance of the Alphas. There is no ideal date for pulling the simweight details. Some consultants may experience a decrease in their simweight while some may notice an increase. However, your tier will be decided based on the simweight and other performance metrics on the snapshot date.</p><p data-block-key=\"ezkol\"></p>",
+      "id": "768ac19b-8fb2-4fed-af25-5bc0e4d3c3bd"
+    }
+  ],
+  "sequence": 4,
+  "category": "Consultant Information",
+  "duration": null
+}

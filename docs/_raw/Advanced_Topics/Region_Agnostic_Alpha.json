@@ -1,0 +1,288 @@
+{
+  "id": "region-agnostic-alpha",
+  "title": "Region Agnostic Alpha",
+  "lastModified": "2026-09-07T10:07:55.621403-04:00",
+  "content": [
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Introduction"
+      },
+      "id": "5c56e2ac-7033-4a96-af2d-ffe29fed42b1"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"iqrq7\">Region Agnostic Alpha (RAA) is a new Alpha research methodology that involves simulating an Alpha across multiple regions in a <b>single simulation</b> (GLB, USA, ASI, EUR). The primary benefits are:</p><ul><li data-block-key=\"cq6kf\"><b>Robustness</b>: If a signal demonstrates efficacy across multiple regions, it indicates strong statistical significance and broad coverage, thereby enhancing robustness and reducing the likelihood of overfitting.</li><li data-block-key=\"dg6ej\"><b>Flexibility</b>: Should a signal prove effective only in specific regions, the Alpha can be adjusted accordingly to target those regions.</li></ul><p data-block-key=\"5pr2k\">The expression structure is identical to standard fast expressions; the principal distinction is that data fields in a Region Agnostic Alpha are translated into GLB, USA, EUR, and ASI Alphas. A Region Agnostic Alpha may be submitted if it performs acceptably in <b>two or more regions</b>.</p>",
+      "id": "2ae13a8e-0609-453b-bca1-8f1624ff47ab"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Parent / child structure"
+      },
+      "id": "120f37c8-df30-499e-9e23-198e833de1a3"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"iqrq7\">A single RA simulation produces one <b>RA Parent</b> Alpha and up to 4 <b>RA Child</b> Alphas (one per region: Alpha (USA, EUR, ASI, GLB) → RAAlpha):</p><ul><li data-block-key=\"2nlv2\">Alpha properties (name, description, etc.) are held at the parent level; RA Child Alphas inherit the parent&#x27;s description (updating the parent&#x27;s description updates all children).</li><li data-block-key=\"n4pl\">Individual RA Child Alphas can still be cloned and worked on as regular Alphas.</li><li data-block-key=\"94fam\">RA Child Alphas can be used in super Alphas (treated like regular Alphas).</li><li data-block-key=\"e30cd\">We suggest submitting through RAA instead of submitting the regions separately as individual Alphas, where possible.</li></ul><p data-block-key=\"4clj3\"></p><p data-block-key=\"cpj7i\">To simulate a RAAlpha, on Simulation page use the &#x27;+&#x27; button and choose &#x27;New Region-Agnostic Simulation&#x27;:</p><p data-block-key=\"2n92n\"></p>",
+      "id": "866c5ea9-0f30-479c-9034-7a2f7b5feda5"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "Region Agnostic Simulation",
+        "width": 1699,
+        "height": 597,
+        "fileSize": 49518,
+        "url": "https://api.worldquantbrain.com/content/images/9gdVoL-8DfD_r71igBl540RdAus=/464/original/region-agnostic-simulation.png"
+      },
+      "id": "0474a3dc-a61b-44dd-8be2-258aee036f1b"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Simulation Settings"
+      },
+      "id": "f09c6951-7125-426a-900f-a088f40eb7d3"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Compatibility constraints"
+      },
+      "id": "3755c494-b74e-4eec-bb1b-122ff0372b72"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"iqrq7\"></p><ol><li data-block-key=\"4h88e\"><b>Delay</b>: D1 only.</li><li data-block-key=\"7uqjh\"><b>Universe</b>: requires the special RA universes — SMALL, MEDIUM, <b>LARGE</b> (see mapping below).</li><li data-block-key=\"c7grc\"><b>Max-trade / max-pos</b> (max-pos and max-trade cannot both be ON simultaneously):    - If max-trade OFF, max-pos OFF → ASI automatically runs with max-trade ON.    - If max-trade ON, max-pos OFF → ASI stays max-trade ON.    - If max-trade OFF, max-pos ON → ASI uses max-pos ON and max-trade OFF.</li></ol><p data-block-key=\"dle9j\">Rationale: max-pos also captures an investibility constraint, which is sufficient for the original purpose of ASI&#x27;s max-trade test.</p>",
+      "id": "36d3396e-24be-4ca1-ac08-90dd48d9e0ec"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Universe mapping"
+      },
+      "id": "3ac0aba4-ef89-44b3-ade8-773029e4aeab"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"iqrq7\">The RA universe setting maps to the following per-region universes:</p>",
+      "id": "e9ba6746-0648-4361-94a2-6ec2b84c59e4"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "RA Universe",
+            "ASI",
+            "EUR",
+            "GLOBAL",
+            "USA"
+          ],
+          [
+            "LARGE",
+            "MINVOL1M",
+            "TOP2500",
+            "MINVOL1M",
+            "TOP3000"
+          ],
+          [
+            "MEDIUM",
+            "MINVOL10M",
+            "TOP1200",
+            "MINVOL10M",
+            "TOP2000"
+          ],
+          [
+            "SMALL",
+            "TOP500",
+            "TOP800",
+            "TOPDIV3000",
+            "TOP1000"
+          ]
+        ],
+        "cell": [],
+        "firstRowIsTableHeader": true,
+        "firstColIsHeader": true,
+        "tableCaption": ""
+      },
+      "id": "ce067ad4-90a9-4bb4-b49c-e02a86553112"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Data field rules"
+      },
+      "id": "4f7790fb-2daa-4146-a4fd-10e5e602b706"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"iqrq7\">An expression may reference fields whose region coverage does not fully overlap; the simulation runs on the <b>intersection</b> of the regions:  - abc_usa_asi * xyz_glb_eur → fails: no intersecting regions (&quot;Region agnostic simulations must have more than one region&quot;).  - abc_usa_asi * xyz_usa_eur → would produce only a USA simulation, so it also cannot run as RA (RA requires more than one region). It is recommended to work on fields that are present in multiple regions, and preferably to focus on one dataset at a time.</p>",
+      "id": "87568b7d-dab7-4eed-aac6-b2d09cbd4020"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Submission Tests"
+      },
+      "id": "2bb00fec-ff2a-44ec-86e9-6e641652cbed"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"iqrq7\">At least 2 RA Child Alphas need to pass all of the following tests:</p><ul><li data-block-key=\"6ast4\">Standard Sharpe test: Sharpe &gt;= 1.58</li><li data-block-key=\"7d8jb\">Standard Fitness test: Fitness &gt;= 1.0</li><li data-block-key=\"9bm49\">2Y ladder Sharpe test: 2Y ladder Sharpe &gt;= 1.58</li><li data-block-key=\"1ncgg\">Sub-universe Sharpe test</li><li data-block-key=\"2m03k\">Self correlation test</li><li data-block-key=\"63rak\">ASI-specific:   - Max-trade forced ON</li></ul><p data-block-key=\"71sqf\"><b>Prod correlation</b> is tested at the RA Parent level: assuming &gt;= 2 RA Child Alphas already pass the criteria above, if <b>all</b> of them fail prod correlation, the RA Parent is un-submittable; otherwise, all passing RA Children are submitted</p>",
+      "id": "20132bc8-4b6d-424e-8716-9e5f36eec7eb"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Alpha Classification"
+      },
+      "id": "dc7463f2-14ee-464b-afab-3c7e1b0bcf90"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"iqrq7\">An RAA can be an <b>Atom</b> and a <b>Power Pool</b> Alpha.</li><li data-block-key=\"e9q75\">Some RA Children might pass and some fail the IS ladder test, leading to different classifications across children — this is expected.</li></ul>",
+      "id": "da9eaa8d-39b7-4b2a-9eaa-6de4640a0647"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Quota Management"
+      },
+      "id": "d4fa7c1f-65cd-434d-af95-b46b4844dc88"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "Quota",
+            "Treatment"
+          ],
+          [
+            "Submission quota",
+            "Treated as 1 regular Alpha (consumes only the RA Parent submission, not\n  the children)"
+          ],
+          [
+            "Concurrent simulation quota",
+            "Counts the sum of RA Child Alphas' concurrent quota"
+          ],
+          [
+            "Daily simulation quota",
+            "Counts the number simulated RA Child Alphas"
+          ]
+        ],
+        "cell": [],
+        "firstRowIsTableHeader": true,
+        "firstColIsHeader": false,
+        "tableCaption": ""
+      },
+      "id": "856459cb-c685-4326-b2e6-1e2150efd479"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Genius Stats"
+      },
+      "id": "45af6139-34a5-4431-8668-1cbb0f786801"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "Stat",
+            "Treatment"
+          ],
+          [
+            "Signals",
+            "Counts RA Child Alphas"
+          ],
+          [
+            "Combined Alpha performance",
+            "Counts submitted RA Child Alphas"
+          ],
+          [
+            "Operators and fields per Alpha",
+            "1 Alpha (considers only the RA Parent Alpha)"
+          ],
+          [
+            "Signal and pyramid count",
+            "Considers submitted RA Child Alphas only"
+          ]
+        ],
+        "cell": [],
+        "firstRowIsTableHeader": true,
+        "firstColIsHeader": false,
+        "tableCaption": ""
+      },
+      "id": "3d1ab85e-26d6-4462-8d3e-2d91ec1efc9e"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Pyramids"
+      },
+      "id": "137292c1-0958-4cd5-a734-254932bc5777"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ol><li data-block-key=\"iqrq7\"><b>Pyramid Alpha distribution</b>: on submission, each submitted RA Child is added to its pyramid.</li><li data-block-key=\"belh8\"><b>Alpha distribution</b>: each submitted RA Child is added to the distribution.</li><li data-block-key=\"7rs9k\"><b>Pyramid theme multiplier</b>: the RA Parent takes the <b>max of</b> <b>submitted all RA Children</b>. Viewing the parent&#x27;s submission check shows the max child multiplier if a child cannot be submitted, the max over submittable children is shown. On submission, the max of the submitted children&#x27;s theme multipliers is recorded against the parent, and each child&#x27;s multiplier is recorded against that child.</li></ol>",
+      "id": "65133474-1434-4003-b2bd-501fc8215130"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Theme multiplier combination"
+      },
+      "id": "e18f1282-6b28-498c-ae1f-425575d25dbb"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"iqrq7\"></p><ul><li data-block-key=\"af0cq\"><b>Regular themes (non-pyramid)</b>: all submitted RA Child theme multipliers are combined, and the standard formula is then applied:<br/>(<b>sum</b>(<b>multipliers</b>) - len(<b>multipliers</b>) + 1)</li><li data-block-key=\"5hvcv\"><b>Pyramid theme multiplier</b>: the max child pyramid multiplier is added to the formula as one more multiplier. For example, if RAAlpha-USA matches a pyramid with multiplier 1 and RAAlpha-ASI matches a pyramid with multiplier 1.5, then 1.5 is added into the formula&#x27;s multipliers.</li></ul>",
+      "id": "c4d35aaa-0c17-42fa-8c9a-33630175ecc9"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Osmosis Points"
+      },
+      "id": "dcc6b0df-6d86-47a4-82a2-03f466e62a78"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"iqrq7\">Osmosis points apply to submitted <b>RA Children only</b> — the RA Parent cannot be combined into a combo, so points cannot be allocated to the parent.</li></ul>",
+      "id": "cb1aa799-17d3-4234-b112-d31dd94b27fb"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips for Success"
+      },
+      "id": "48aa6a1d-3c19-4e7b-a8c1-d6fdcc3b7459"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"iqrq7\">Exercise caution when conducting cross-sectional data comparisons, as inconsistencies may arise in currency units, market capitalization scales, and stock face values. Resolve these either by normalizing values by their respective scales or by using time-series comparison operations to standardize units.</li><li data-block-key=\"3a8e\">If a Region Agnostic Alpha proves difficult to satisfy submission criteria across two or more regions, optimization on individual regions remains a viable alternative.</li><li data-block-key=\"1mtoa\">Signals discovered in the GLB region can serve as an effective starting point.</li></ul>",
+      "id": "5b35c318-bdb5-449a-8c09-203045278a05"
+    }
+  ],
+  "sequence": 120,
+  "category": "Advanced Topics",
+  "duration": null
+}

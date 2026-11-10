@@ -1,0 +1,70 @@
+{
+  "id": "getting-started-ram-risk-neutralized-alphas",
+  "title": "RAM Risk-Neutralized Alphas",
+  "lastModified": "2026-09-18T01:10:53.156241-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains RAM risk neutralization and why reducing exposure to short-term reversal and long-term momentum can make an Alpha more independent from common price-driven effects. It shows how removing these familiar risks can improve signal quality, Sharpe, and drawdown behavior.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "489945b9-c1ec-4576-9280-503c84c33001"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "What is Reversion and Momentum (RAM) Factor?"
+      },
+      "id": "0d3fc584-163e-41c5-9caf-4b9f2f9c73f3"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"i0fgk\"><b>Reversion Factor:</b><br/> The short-term reversion factor captures the phenomenon where stocks that have recently underperformed tend to generate higher returns in the near future, while stocks that have recently outperformed are more likely to experience declines. This behavior is based on the idea that markets often overreact to short-term events, causing temporary mispricing. As these inefficiencies are corrected, oversold stocks recover, and overbought stocks pull back. The reversion factor typically operates within a <b>5-day time horizon</b> and leverages mean reversion by overweighting recently underperforming stocks and underweighting recently outperforming stocks.</p><p data-block-key=\"5uolm\"><b>Momentum Factor:</b><br/> The momentum factor identifies stocks that exhibit consistent price trends based on recent performance. Stocks with positive excess returns in the recent past tend to continue their upward trajectory, while stocks with negative excess returns persist in their downward trend. This trend-following behavior is based on the principle that established price trends are more likely to continue than reverse. Momentum is typically calculated as the <b>cumulative excess return</b> over the last <b>12 months</b>.</p>",
+      "id": "7f0a0a05-08ad-4a97-b413-68491358a326"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Benefits of RAM Neutralization"
+      },
+      "id": "4c8d5e6b-29d8-4814-bd1f-5decc4d73038"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"gj4yf\"><b>RAM Neutralization</b> adjusts Alpha to reduce exposure to the Reversion and Momentum factors derived from stock price data.</p><ul><li data-block-key=\"hmwl8\"><b>Neutralize Momentum Factor:</b> Reduces exposure to crowded trades during strong momentum trends, minimizing risks during market corrections.</li><li data-block-key=\"wxyh4\"><b>Neutralize Short-Term Reversion Factor:</b> Hedges Alphas against mean-reversion signals, reducing unwanted risks.</li><li data-block-key=\"eue5m\"><b>Remove influence of Price: Helps eliminate the effect of price in unrelated Alphas, such as fundamental metrics like ‘eps/close.’</b></li><li data-block-key=\"0jzmj\"><b>Improve Performance:</b> Mitigates risks during market drawdowns, improving Sharpe Ratio, reducing drawdowns, and balances turnover benefits with transaction costs for better Alpha performance.</li></ul>",
+      "id": "dacfb3d6-2afa-42a5-b639-0aef55bf8783"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "How to Simulate RAM Risk-Neutralized Alphas"
+      },
+      "id": "487a6f69-90b4-4eb6-8293-586db1784c7d"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "30.png",
+        "width": 618,
+        "height": 338,
+        "fileSize": 18513,
+        "url": "https://api.worldquantbrain.com/content/images/qAjglu10rPB6hjaX4KaAOZJm8Xc=/395/original/30.png"
+      },
+      "id": "261c9f30-94f2-4986-b06d-0f5754e32d27"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"zejor\"></p><p data-block-key=\"71z4o\">Below is an example configuration for simulating RAM risk-neutralized Alphas:</p>",
+      "id": "055f0071-b532-4bfc-9d20-dcd5d583626e"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"xg1wz\"></p><p data-block-key=\"h9ecf\">{<br/> &quot;instrumentType&quot;: &quot;EQUITY&quot;,<br/> &quot;region&quot;: &quot;USA&quot;,<br/> &quot;universe&quot;: &quot;TOP3000&quot;,<br/> &quot;delay&quot;: 1,<br/> &quot;decay&quot;: 0,<br/> &quot;neutralization&quot;: &quot;REVERSION_AND_MOMENTUM&quot;,<br/> &quot;truncation&quot;: 0.1,<br/> &quot;pasteurization&quot;: &quot;ON&quot;,<br/> &quot;unitHandling&quot;: &quot;VERIFY&quot;,<br/> &quot;nanHandling&quot;: &quot;ON&quot;,<br/> &quot;language&quot;: &quot;FASTEXPR&quot;,<br/> &quot;visualization&quot;: false<br/>}</p>",
+      "id": "ccd33502-99a4-448f-8313-364b7f1b6f7f"
+    }
+  ],
+  "sequence": 16,
+  "category": "Advanced Topics",
+  "duration": "PT2M"
+}

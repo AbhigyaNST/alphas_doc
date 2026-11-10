@@ -1,0 +1,180 @@
+{
+  "id": "how-can-you-avoid-duplicate-simulations",
+  "title": "How can you avoid duplicate simulations?",
+  "lastModified": "2026-09-18T01:11:29.328664-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains how to avoid duplicate simulations and why this matters for preserving daily simulation quota, especially when generating Alphas automatically or with LLMs. It shows how a local hash cache can detect repeated Alpha settings, reuse existing Alpha IDs, and submit only genuinely new simulations.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "47db886b-337c-40ac-a383-146f7b791084"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"1ukx9\">When you simulate Alphas automatically or with an LLM, you can easily end up simulating the same Alpha more than once without noticing. A simulation hash cache can help you detect these exact duplicates and reuse the existing alpha_id instead of running the simulation again, so you do not waste your simulation quota on repetitive simulations.</p><p data-block-key=\"v2eu4\">In practice, it is a simple table (for example, a parquet file) with columns such as alpha_hashed, alpha_id, and date_created, where each row represents a previously simulated Alpha. An Alpha configuration dictionary is the JSON-like object you send to the /simulations endpoint, containing the simulation type, settings, and expression, for example:</p>",
+      "id": "a8bc1734-d948-4935-ac8b-c174b9b9df57"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>simulation_data = {\r\n    \"type\": \"REGULAR\",\r\n    \"settings\": {\r\n        \"instrumentType\": \"EQUITY\",\r\n        \"region\": \"USA\",\r\n        \"universe\": \"TOP3000\",\r\n        \"delay\": 1,\r\n        \"decay\": 15,\r\n        \"neutralization\": \"SUBINDUSTRY\",\r\n        \"truncation\": 0.08,\r\n        \"pasteurization\": \"ON\",\r\n        \"testPeriod\": \"P1Y6M\",\r\n        \"unitHandling\": \"VERIFY\",\r\n        \"nanHandling\": \"OFF\",\r\n        \"language\": \"FASTEXPR\",\r\n        \"visualization\": False,\r\n    },\r\n    \"regular\": \"close\",\r\n}</code></pre>",
+      "id": "ab7e0c94-b617-4e54-9d05-59be52392d4d"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"h662m\">You can avoid duplicates by adding a pre-check step before each simulation:</p><ul><li data-block-key=\"h12vv\">Build the Alpha configuration dictionary (alpha_dict) you plan to send to the API.</li><li data-block-key=\"8he7t\">Compute a hash of this dictionary.</li><li data-block-key=\"3s1ld\">Look up this hash in your local cache:<ul><li data-block-key=\"8s3wg\">If found -&gt; retrieve the alpha_id and skip the simulation</li><li data-block-key=\"yhfbf\">If not found -&gt; run the simulation, then add the new hash + alpha_id to the cache.</li></ul></li><li data-block-key=\"icai2\">This way your machine won’t send an identical Alpha twic</li></ul>",
+      "id": "789426ed-36b0-49e8-80f5-70f65adb7379"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Potential steps to implement a local hash-based simulation cache"
+      },
+      "id": "09c5e185-84a1-40e2-bb96-6159839ffa6f"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"5i26e\">Below is a minimal Python example.</p>",
+      "id": "e9128194-4e50-4598-9db3-67f3d7d8c3ee"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Hash your Alpha configuration"
+      },
+      "id": "508cedbb-f18c-42f8-820c-b861af324954"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>from datetime import datetime, timezone\r\n\r\ndef add_to_cache(alpha_dict: dict, alpha_id: str):\r\n    # Ensure cache exists\r\n    if not os.path.exists(CACHE_PATH):\r\n        create_simulation_cache()\r\n\r\n    alpha_hashed = hash_alpha(alpha_dict)\r\n\r\n    # Load existing cache\r\n    t = pd.read_parquet(CACHE_PATH)\r\n\r\n    # Append new record\r\n    new_row = {\r\n        \"alpha_hashed\": alpha_hashed,\r\n        \"alpha_id\": alpha_id,\r\n        \"date_created\": datetime.now(timezone.utc),\r\n    }\r\n\r\n    t = pd.concat([t, pd.DataFrame([new_row])], ignore_index=True)\r\n    t.to_parquet(CACHE_PATH, index=False)</code></pre>",
+      "id": "e2aeb4f7-4308-4426-83d7-84c6c45d5d31"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"yo6t4\">import hashlib<br/>import json</p><p data-block-key=\"0dqs8\">def hash_alpha(alpha_dict: dict) -&gt; str:<br/> alpha_str = json.dumps(alpha_dict, sort_keys=True)<br/> return hashlib.sha256(alpha_str.encode(&quot;utf-8&quot;)).hexdigest()</p>",
+      "id": "330fa191-ea99-462a-8187-08c2ae4bf709"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>import hashlib\r\nimport json\r\n\r\ndef hash_alpha(alpha_dict: dict) -> str:\r\n    alpha_str = json.dumps(alpha_dict, sort_keys=True)\r\n    return hashlib.sha256(alpha_str.encode(\"utf-8\")).hexdigest()</code></pre>",
+      "id": "a79b9c44-68d4-4ca2-82ed-4d4f6490aac9"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Set up cache file"
+      },
+      "id": "b06fc07c-6fe4-4b82-bbb6-7f1c6f20a935"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"qgusz\">import os<br/>import pandas as pd</p><p data-block-key=\"m6xje\">CACHE_PATH = &quot;simulation_cache.parquet&quot;</p><p data-block-key=\"6jh1o\">def create_simulation_cache():<br/> if not os.path.exists(CACHE_PATH):<br/> df = pd.DataFrame(columns=[&quot;alpha_hashed&quot;, &quot;alpha_id&quot;, &quot;date_created&quot;])<br/> df.to_parquet(CACHE_PATH, index=False)</p>",
+      "id": "c50c3de0-6c7f-4f2f-bf23-a368881072ad"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>import os\r\nimport pandas as pd\r\n\r\nCACHE_PATH = \"simulation_cache.parquet\"\r\n\r\ndef create_simulation_cache():\r\n    if not os.path.exists(CACHE_PATH):\r\n        df = pd.DataFrame(columns=[\"alpha_hashed\", \"alpha_id\", \"date_created\"])\r\n        df.to_parquet(CACHE_PATH, index=False)</code></pre>",
+      "id": "fbd84b71-b804-4987-b0d4-2ab0a8147095"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Add simulation to the cache"
+      },
+      "id": "05465614-d25b-4a28-8e02-471950ecb46b"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>from datetime import datetime, timezone\r\n\r\ndef add_to_cache(alpha_dict: dict, alpha_id: str):\r\n    # Ensure cache exists\r\n    if not os.path.exists(CACHE_PATH):\r\n        create_simulation_cache()\r\n\r\n    alpha_hashed = hash_alpha(alpha_dict)\r\n\r\n    # Load existing cache\r\n    t = pd.read_parquet(CACHE_PATH)\r\n\r\n    # Append new record\r\n    new_row = {\r\n        \"alpha_hashed\": alpha_hashed,\r\n        \"alpha_id\": alpha_id,\r\n        \"date_created\": datetime.now(timezone.utc),\r\n    }\r\n\r\n    t = pd.concat([t, pd.DataFrame([new_row])], ignore_index=True)\r\n    t.to_parquet(CACHE_PATH, index=False)</code></pre>",
+      "id": "8ed0f669-3bc7-45ee-b513-cb189f6103cf"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Check if an Alpha was already simulated"
+      },
+      "id": "983f4f83-2d15-4d46-8869-1520d61a6fe5"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"mzzd1\">from typing import Optional</p><p data-block-key=\"dgerw\">def check_if_alpha_already_simulated(alpha_dict: dict) -&gt; Optional[str]:<br/> if not os.path.exists(CACHE_PATH):<br/> return None</p><p data-block-key=\"ri8bm\">alpha_hashed = hash_alpha(alpha_dict)<br/> t = pd.read_parquet(CACHE_PATH)</p><p data-block-key=\"ml60n\">matches = t.loc[t[&quot;alpha_hashed&quot;] == alpha_hashed]<br/> if len(matches) == 0:<br/> return None</p><p data-block-key=\"zo2rs\">return matches.iloc[0][&quot;alpha_id&quot;]</p>",
+      "id": "504b5463-9163-4ea3-bf57-b2ce5c663e58"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>from typing import Optional\r\n\r\ndef check_if_alpha_already_simulated(alpha_dict: dict) -> Optional[str]:\r\n    if not os.path.exists(CACHE_PATH):\r\n        return None\r\n\r\n    alpha_hashed = hash_alpha(alpha_dict)\r\n    t = pd.read_parquet(CACHE_PATH)\r\n\r\n    matches = t.loc[t[\"alpha_hashed\"] == alpha_hashed]\r\n    if len(matches) == 0:\r\n        return None\r\n\r\n    return matches.iloc[0][\"alpha_id\"]</code></pre>",
+      "id": "0ddf0286-8a58-4ec0-a8da-f89808e7b068"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Examples"
+      },
+      "id": "9d561460-df36-41ba-a759-3efc4b42d2b1"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"h35q2\">Integrate this into your existing BRAIN API workflow</p>",
+      "id": "7e1cc499-46a6-44f9-a0b1-91208664f494"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Build alpha configuration"
+      },
+      "id": "7a25dfb5-7733-4429-9ae6-3ae9a96d0a13"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>alpha_list = [\r\n    ace.generate_alpha(\r\n        regular=x,\r\n        region=\"USA\",\r\n        universe=\"TOP1000\",\r\n        delay=1,\r\n        truncation=0.08,\r\n    )\r\n    for x in expression_list\r\n]</code></pre>",
+      "id": "cf011168-6c0b-4cb4-bf2e-334f1ab3d3e8"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Filter out alphas that were already simulated (using the cache)"
+      },
+      "id": "5aad103b-2854-4183-a702-a4fadcd5db36"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>new_alpha_list = []\r\nreused_alpha_ids = []\r\n\r\nfor alpha_dict in alpha_list:\r\n    existing_alpha_id = check_if_alpha_already_simulated(alpha_dict)\r\n    if existing_alpha_id is not None:\r\n        reused_alpha_ids.append(\r\n            {\"alpha_id\": existing_alpha_id, \"simulate_data\": alpha_dict}\r\n        )\r\n    else:\r\n        new_alpha_list.append(alpha_dict)\r\n\r\nprint(f\"Found {len(reused_alpha_ids)} duplicates, {len(new_alpha_list)} new alphas to simulate.\")\r\n\r\n# If everything is a duplicate, you can stop here\r\nif not new_alpha_list:\r\n    stats_list_result = []  # Optionally fetch stats for reused_alpha_ids here</code></pre>",
+      "id": "3b11b146-dd3f-466f-b046-7daa7e380ea2"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Run multi-simulation only for new alphas"
+      },
+      "id": "c5ecc4b3-a110-4555-bfe1-89feb86b8746"
+    },
+    {
+      "type": "TEXT",
+      "value": "<pre><code>else:\r\n    multisim_results = ace.simulate_alpha_list_multi(\r\n        ace_session,\r\n        new_alpha_list,\r\n        limit_of_concurrent_simulations=1,\r\n        limit_of_multi_simulations=8,\r\n    )</code></pre>",
+      "id": "d7693283-cf6a-416b-a93a-5ff2299e0bf1"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips for success"
+      },
+      "id": "a39ef754-c356-41e7-825b-695183301090"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"ppcq7\">Hash the full configuration:<ul><li data-block-key=\"yzee4\">Include expression(s) and all relevant settings (region, universe, delay, truncation, etc.).</li><li data-block-key=\"htap0\">If you use generate_alpha function from ace_lib, hashing its output dictionary is enough.</li></ul></li><li data-block-key=\"ggle7\">Consider cleanup:<ul><li data-block-key=\"lzrzi\">If the file grows large, you can delete older entries</li></ul></li></ul>",
+      "id": "c82d432a-d060-4ce7-ab3c-6d25b74c158f"
+    }
+  ],
+  "sequence": 22,
+  "category": "BRAIN API & Python Alphas",
+  "duration": "PT4M"
+}

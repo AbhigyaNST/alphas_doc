@@ -1,0 +1,148 @@
+{
+  "id": "understanding-pnl-realization-horizon",
+  "title": "Understanding PnL Realization Horizon",
+  "lastModified": "2026-09-18T01:11:40.872367-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains PnL Realization Horizon, a metric that shows how quickly an Alpha’s positions turn into realized PnL. It matters because it helps users check whether a signal’s payoff timing matches the original idea, especially for high-turnover investment ideas that should capture information quickly.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "657163a4-7ba3-4bd1-ad0c-4dcc0901544f"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Overview"
+      },
+      "id": "e7193253-c264-443a-b567-9c026caaaf7a"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"jretv\"></p><p data-block-key=\"gdcur\"><b>PnL Realization Horizon</b> is an important metric that measures how quickly an Alpha&#x27;s positions translate into realized PnL. This metric helps consultants understand the time characteristics of their Alpha signals and make informed decisions about Alpha quality and suitability for different ideas.</p><p data-block-key=\"dfgds\">This feature is being deployed as part of the High Turnover (HTVR) Campaign.</p>",
+      "id": "c7a0f376-13fd-4ab5-8e10-da948f7d0a24"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Understanding Signal Components"
+      },
+      "id": "e638ea01-5227-40a3-9cd7-0b716b4d0e98"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"wugot\"></p><p data-block-key=\"uilvj\">An Alpha&#x27;s PnL realization can have two components:</p><ul><li data-block-key=\"u56q3\"><b>Short-term Component</b>: Alpha positions seek to predict returns and realize PnL over 1-5 days. Current positions have little return predictability beyond 5 days.</li><li data-block-key=\"y30z1\"><b>Long-term Component</b>: Alpha positions seek to predict returns over 10-20+ days. Positions may not realize PnL quickly but accumulate over longer horizons.</li></ul><p data-block-key=\"ofclu\"><b>How to use:</b> By resimulating all your submitted Alphas, you could have a picture of PnL horizon of your Alpha pool. In most cases, you may have a horizon of 20+ days, with lower turnover components reaching 40+ days. In this case, short-term realization Alphas naturally provide orthogonality to your existing Alpha pool and enhance its robustness.</p>",
+      "id": "c757cb07-a468-48f5-86e1-65c4f3587d1c"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "HTVR Eligibility Criteria"
+      },
+      "id": "3f3e28e2-e5a4-4f8b-8ec4-33388fa2d8d8"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"1hhc6\"></p><p data-block-key=\"qn8yt\">For the High Turnover Campaign, Alphas must meet:</p><ul><li data-block-key=\"qzdlw\">Turnover greater than 20%</li><li data-block-key=\"uripl\">PnL Realization Horizon less than 20 days OR High TVR Returns greater than 75% of total return</li></ul><p data-block-key=\"thq0i\">Short realization ensures high turnover position change activity actually captures value quickly.</p>",
+      "id": "f9d8a555-6448-4587-95c9-5648299eb60c"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips for Alpha Research"
+      },
+      "id": "e8f62abd-d5b4-415b-ae26-d16a911be81b"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "1. Validate Your Alpha Idea with Realization Horizon"
+      },
+      "id": "a5169bf1-5e49-4cf7-b43b-8c720b1eb9d7"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"6dgi6\"></p><p data-block-key=\"3r1c3\"><b>Before submission</b>, check if the PnL realization horizon matches your Alpha&#x27;s thesis:</p><ul><li data-block-key=\"86veh\"><b>Momentum/News Alphas</b>: Should have short horizon (less than 10 days) - information decays quickly</li><li data-block-key=\"bh2e9\"><b>Fundamental Alphas</b>: May have longer horizon (20-40 days) - value takes time to realize</li><li data-block-key=\"sqtfl\"><b>High turnover Alphas</b>: Must have short horizon (less than 20 days) - position change costs require quick realization</li></ul>",
+      "id": "8285b502-353e-48eb-b517-131ec3ebb4b3"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "2. Use Realization to Identify Orthogonal Signals"
+      },
+      "id": "c3670c5a-4618-4804-9f1b-477eeb730d58"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"g7unj\"></p><p data-block-key=\"a6u3n\">Alphas with short realization horizon are naturally orthogonal to the existing daily pool:</p><ul><li data-block-key=\"yps8r\">Lower correlation to existing positions</li><li data-block-key=\"ygun2\">Lower impact on the book</li><li data-block-key=\"8xfb7\">Better diversification benefits</li></ul>",
+      "id": "7cc0de1c-69df-4a10-a8c2-587f97d2f618"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "3. Improve Alpha Quality by Checking Horizon"
+      },
+      "id": "7b4e385a-574f-4b56-8588-30805b6c3621"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"r4yc4\"></p><p data-block-key=\"60n0i\">If your Alpha has:</p><ul><li data-block-key=\"35j56\"><b>High Sharpe but long horizon (greater than 40 days)</b>: Consider if this matches your data characteristics</li><li data-block-key=\"c4kt0\"><b>Low Sharpe but appropriate horizon</b>: May still be valuable for orthogonal Alpha ideas</li><li data-block-key=\"7vniv\"><b>Inconsistent horizon vs idea</b>: May indicate overfitting or data issues</li></ul>",
+      "id": "838a95e7-e65c-45ed-8aa0-587c22a66faf"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "4. Reducing Long-Term Component"
+      },
+      "id": "dfe5f70b-a22a-4f69-8764-ce9613942d87"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"138vl\"></p><p data-block-key=\"l4w59\">If you want to create shorter horizon signals, consider:</p><ul><li data-block-key=\"juaw5\">Removes long horizon component and keeps short realization</li><li data-block-key=\"rii3a\">Subtract moving average of positions</li><li data-block-key=\"2d689\">Use faster-changing data (tick data, news, options)</li></ul>",
+      "id": "0662b755-c848-4f3e-b067-fa0c0bcbdc6f"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Common Questions"
+      },
+      "id": "389ac5f3-e401-4fef-acd4-7947c2819f0c"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Q: How does turnover relate to realization horizon?"
+      },
+      "id": "37e5c31e-50f2-42d6-a9df-96498d42f051"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"uajn5\"></p><p data-block-key=\"5nwhd\">Generally, higher turnover correlates with shorter realization horizon, but not always. High turnover with long horizon may indicate unnecessary position change that does not capture value quickly.</p>",
+      "id": "640c67ad-148d-44ee-b638-24136910c721"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Q: Should I always seek short horizon?"
+      },
+      "id": "458dd832-40e3-42bc-8b1c-667d4ff400c0"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"fpj1u\"></p><p data-block-key=\"u0lo4\">No. Match horizon to your Alpha thesis. Fundamental Alphas may legitimately have longer horizons. But for HTVR classification, short horizon (less than 20 days) is required.</p>",
+      "id": "9fed1640-6978-447b-abe0-32697a5bf578"
+    }
+  ],
+  "sequence": 4,
+  "category": "Getting Started",
+  "duration": "PT3M"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "getting-started-india-alphas",
+  "title": "India Alphas",
+  "lastModified": "2026-09-18T01:11:12.846512-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains what makes Alpha research in India different, including its separate universe, turnover limits, robust universe tests, and optional Max Trade controls. It helps users adapt ideas from ASI while focusing on liquidity, margin, investability, and diverse data categories suited to the IND market.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "c02a00f0-860b-4281-abd4-069463cee83b"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Introduction"
+      },
+      "id": "76e4161e-01ea-4ec0-81bd-59f18af4814f"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"6l2od\"></p><p data-block-key=\"9gtsy\">India universe on BRAIN consists of the top 500 stocks by liquidity.</p><p data-block-key=\"94hkt\">Normal Alpha tests are applied, including Sharpe, fitness, sub-universe Sharpe, IS ladder etc.</p><p data-block-key=\"s7mxy\">Max Trade is not mandatory in IND, and maximum turnover cap is 40%.</p><p data-block-key=\"geicq\">IND need to pass an additional <b>robust universe Sharpe test</b>: IND Alpha should have minimum Sharpe of 1, in liquid stocks selected by BRAIN.</p>",
+      "id": "c28717b5-c930-4bd2-b42a-60e664c40629"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Tips for Success"
+      },
+      "id": "0d13f87c-a234-4203-93dd-032884356d5e"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"pcxbg\"></p><p data-block-key=\"83b0b\"><b>IND stocks are not included in ASI universes</b>, also <b>many data appear in both ASI and IND</b>, so we encourage <b>retrying your ASI Alphas in IND</b>. Alphas that do well in both universes, may be strong candidates.</p><p data-block-key=\"9aine\">Try <b>diverse data categories</b>, while it can lead to better combined performance.</p><p data-block-key=\"u6okp\">Though maxtrade is optional, we still encourage <b>keeping the investability constrained PnL to have a reasonable performance</b>.</p><p data-block-key=\"196d3\">Though max turnover is 40%, however we still encourage to <b>lower the turnover</b> if possible. Having <b>high margin</b>, with turnover lower than 20% is a good practice.</p>",
+      "id": "c9ef2881-ba0d-4461-ad71-26dd1ab4c8c3"
+    }
+  ],
+  "sequence": 2371,
+  "category": "Regions and Universes",
+  "duration": "PT1M"
+}

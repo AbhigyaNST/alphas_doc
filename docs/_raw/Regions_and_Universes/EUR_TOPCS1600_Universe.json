@@ -1,0 +1,36 @@
+{
+  "id": "getting-started-eur-topcs1600-universe",
+  "title": "EUR TOPCS1600 Universe",
+  "lastModified": "2026-08-26T06:30:30.556952-04:00",
+  "content": [
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Characteristics of the EUR TOPCS1600 Universe"
+      },
+      "id": "fbd0cd69-3b10-42b6-8211-a4a150128271"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"a1jjs\"></p><p data-block-key=\"462v9\">The EUR TOPCS1600 universe is a new EUR universe that adds diversity by focusing on new and unique country exposures and moving away from countries that are already crowded in the BRAIN pool and actively researched in other universes.</p><p data-block-key=\"q2qit\">You can verify the exact composition using the <a href=\"https://platform.worldquantbrain.com/learn/documentation/consultant-information/visualization-tool\"><b>Visualization tool</b></a> (Coverage By Country/Region) on BRAIN.</p>",
+      "id": "5df848eb-b5ad-4978-b0e3-e621d9416da0"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "Tips for Success"
+      },
+      "id": "7d620cb6-9b69-458e-8ee5-66072b9d24fd"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"mcukn\"></p><ul><li data-block-key=\"v5xw0\">Liquidity is important in EUR TOPCS1600. Ensure that a significant part of your performance comes from the upper 40% of stocks by capitalization (Sharpe By Capitalization in Visualization Tool), i.e.:<ul><li data-block-key=\"98kwh\">Buckets 60–80</li><li data-block-key=\"ttvp3\">Buckets 80–100</li></ul></li><li data-block-key=\"as26s\">Use the <a href=\"https://platform.worldquantbrain.com/learn/documentation/interpret-results/alpha-submission#:~:text=fail%20this%20test.-,Sub%20Universe%20Test,-Sub%2Duniverse%20test\">Sub-Universe</a> test as an additional quality filter. Try to <b>maximize sub-universe Sharpe</b>, not just barely pass the minimum.</li><li data-block-key=\"uq3rq\">Use <a href=\"https://platform.worldquantbrain.com/learn/documentation/advanced-topics/getting-started-investability-constrained-metrics\">Investability-Constrained</a> Sharpe statistics or set Max Trade Setting ON.<ul><li data-block-key=\"4v69r\">Investability-constrained Sharpe &gt; 0.8</li><li data-block-key=\"i5nlc\">Margin &gt; 5‱</li></ul></li><li data-block-key=\"4hk5q\">Implement rank test:<ul><li data-block-key=\"9g6mr\">Apply a <b>rank()</b> operator to your Alpha and check its performance.</li><li data-block-key=\"551p3\">The Sharpe after rank should still be positive.</li><li data-block-key=\"go1nn\">If performance disappears after ranking, your Alpha is possibly too sensitive to exact value levels and is less robust.</li></ul></li><li data-block-key=\"6plhe\">Start with datasets where you previously had Alphas with Sharpe &gt; 0.8 but &lt; 1 on other EUR universes</li><li data-block-key=\"zzqp4\">Seek to leverage your existing work:<ul><li data-block-key=\"ocw9n\">Re-simulate your EUR TOP1200 Alphas on the EUR TOPCS1600 universe.</li><li data-block-key=\"jrnzu\">Identify Alphas that:<ul><li data-block-key=\"fujxa\">Maintain or improve Sharpe under investability constraints.</li><li data-block-key=\"oaffi\">Show good performance in upper cap buckets (60–80, 80–100).</li></ul></li></ul></li></ul><p data-block-key=\"ymf1n\">This can help you build a high-quality Alphas on TOPCS1600.</p><p data-block-key=\"wxoyt\">Happy simulating!</p>",
+      "id": "73174711-183c-4699-a802-c60b304a20a2"
+    }
+  ],
+  "sequence": 1233,
+  "category": "Regions and Universes",
+  "duration": "PT2M"
+}

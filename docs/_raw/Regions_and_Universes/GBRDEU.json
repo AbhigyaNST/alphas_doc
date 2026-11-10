@@ -1,0 +1,36 @@
+{
+  "id": "getting-started-on-gbrdeu",
+  "title": "GBR/DEU",
+  "lastModified": "2026-08-25T02:37:18.926878-04:00",
+  "content": [
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Introduction"
+      },
+      "id": "d27a78bd-9282-4761-a8f4-b0b39a752c24"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"941ed\"></p><ul><li data-block-key=\"fqg3k\">Region GBR (country code of United Kingdom) is created by stocks listed on the United Kingdom exchange.</li><li data-block-key=\"e6v6c\">Region DEU (country code of Germany) is created by stocks listed on the German exchange.</li><li data-block-key=\"flvk7\"><a href=\"https://platform.worldquantbrain.com/learn/documentation/interpret-results/alpha-submission\">Standard submission tests</a> are applied.</li></ul>",
+      "id": "996539e1-3d22-42e0-89f9-8ac56d85169e"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips"
+      },
+      "id": "284e1630-adb9-4d57-87d4-85bf8e47a5ab"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"941ed\">You can first try transferring EUR Alphas to the GBR and DEU regions.<ul><li data-block-key=\"c1bh\">This might provide some performance improvement, but you may often still need to further optimize them for submission.</li></ul></li><li data-block-key=\"6krdj\">In addition to ideas that work in EUR, you can also try specific ideas or datasets that are only available or have higher coverage in GBR and DEU.<ul><li data-block-key=\"an3gb\">This can provide diversified signals to improve your combined performance.</li><li data-block-key=\"8188i\">Recommended dataset for DEU:<ul><li data-block-key=\"fpoll\">trend_momentum_model</li><li data-block-key=\"2pk3g\">analyst56</li><li data-block-key=\"8okdk\">analyst_pred_cons</li><li data-block-key=\"8l3kc\">pv109</li><li data-block-key=\"elfo3\">analyst_factor_signals</li><li data-block-key=\"798sk\">fundamental89</li><li data-block-key=\"d7k1\">fundamental93</li><li data-block-key=\"al6gf\">stock_vol_index</li><li data-block-key=\"23ae9\">institutions25</li><li data-block-key=\"f4qg6\">option_chart_model</li></ul></li><li data-block-key=\"vhfv\">Recommended dataset for GBR:<ul><li data-block-key=\"3k643\">analyst83</li><li data-block-key=\"45meu\">analyst56</li><li data-block-key=\"2dvp2\">pv109</li><li data-block-key=\"b8d83\">other384</li><li data-block-key=\"2ov0j\">event_sentiment_signals</li><li data-block-key=\"eiokk\">institutions25</li><li data-block-key=\"c1i2e\">option_chart_model</li><li data-block-key=\"c4db7\">sentiment33</li></ul></li></ul></li><li data-block-key=\"1lft2\">For DEU Alphas, you can focus more on optimizing the Sharpe ratio, both on the research universe and the sub-universe.</li><li data-block-key=\"1qgkn\">You might find GBR Alphas easier to create compared to DEU Alphas, which is expected.<ul><li data-block-key=\"466a0\">However, creating submittable DEU Alphas can improve your combined performance even further, so both are worth investing time in for signal research.</li></ul></li></ul>",
+      "id": "5a44c05b-0b1f-45fb-96a9-2aa5029fefca"
+    }
+  ],
+  "sequence": 1000,
+  "category": "Regions and Universes",
+  "duration": null
+}

@@ -1,0 +1,321 @@
+{
+  "id": "fast-d1-documentation",
+  "title": "Fast D1 Documentation",
+  "lastModified": "2026-09-18T01:11:18.469684-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article introduces Fast D1 and explains why data arriving between the previous close and today’s open can create signals that standard Delay-1 simulations may miss. It shows how _fast_d1 fields can be used to capture overnight information from news, earnings, analyst updates, and pre-market activity.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "e8e80ec1-2431-44f3-aea0-4c84f23a0b37"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "What is Fast D1?"
+      },
+      "id": "f80455af-a9a8-4697-bfa5-c53ac46a9e7c"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"ad5pf\">Fast D1 is a framework for developing Alphas that use data available between day 0 (D0) and day 1 (D1). By leveraging the most current overnight information - such as news, earnings announcements, analyst updates, and pre-market activity - Fast D1 Alphas can capture predictive signals that deliver superior performance compared to regular D1 models.</p><p data-block-key=\"jwbqq\"><b>Key Advantage:</b> Access to real-time overnight catalysts that traditional D1 Alphas miss.</p>",
+      "id": "e2918577-91c8-4cd8-a647-1a7a55397ec2"
+    },
+    {
+      "type": "IMAGE",
+      "value": {
+        "title": "fast-d1.png",
+        "width": 1222,
+        "height": 379,
+        "fileSize": 32330,
+        "url": "https://api.worldquantbrain.com/content/images/Mc4b-dKXuyNtpGVUgr-NpRDNJC4=/450/original/fast-d1.png"
+      },
+      "id": "ec3925bc-b8d5-482a-8453-59ba8a410e53"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "How Fast D1 Works"
+      },
+      "id": "1a7df2bd-98e5-48fc-95ca-1d145c2b53e3"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"nhmh4\"></p><p data-block-key=\"51p5t\"><b>Data Timing Comparison</b></p><p data-block-key=\"wuie2\">Understanding the critical difference in data availability:</p>",
+      "id": "c497324e-3595-42fb-855b-324683ae2d4a"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "Delay",
+            "Field Type",
+            "Data Timestamp",
+            "Information Captured"
+          ],
+          [
+            "1",
+            "snt_buzz",
+            "Yesterday's market close",
+            " Yesterday’s End-of-day data only"
+          ],
+          [
+            "Fast D1",
+            "snt_buzz_fast_d1",
+            "Today's market open",
+            "Overnight news, events, pre-market moves"
+          ],
+          [
+            "0",
+            "snt_buzz",
+            "30 minutes before today's close",
+            "Close to end of today – harder to execute"
+          ]
+        ],
+        "firstRowIsTableHeader": true,
+        "firstColIsHeader": false
+      },
+      "id": "99b42702-3ca2-4735-8d23-9e85bf39d70d"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"avox2\"></p><p data-block-key=\"juaqp\"><b>Fast D1 captures the overnight information gap that drives market movements at the open</b></p>",
+      "id": "3981c3b6-416d-4344-ad4a-c2c5d209522a"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Implementation Guide"
+      },
+      "id": "5179fc99-c4f5-4ac2-beed-ffaede40eb00"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "2",
+        "content": "How to Simulate Fast D1 Alphas"
+      },
+      "id": "5b5a1ac1-0d20-49f6-a5b4-8529d327ce75"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"42j49\"></p><p data-block-key=\"s1v1q\"><b>Simple 2-Step Process:</b></p><ol><li data-block-key=\"b1zl3\"><b>Select Delay-1</b> in simulation settings</li><li data-block-key=\"o1yh3\"><b>Use fields with _fast_d1 suffix</b></li></ol><p data-block-key=\"uk3is\"><b>Important Notes</b></p><p data-block-key=\"yf4nc\">✅ <b>Every Fast D1 field has a regular D1 equivalent</b> (just without the <b>_fast_d1</b> suffix)<br/> ✅ <b>No separate delay dropdown</b> for Fast D1-it&#x27;s the same Delay-1 setting<br/> ✅ <b>Currently available only in the USA region</b><br/> ✅ <b>Same submission criteria</b> as regular D1 alphas</p><p data-block-key=\"3czbd\"></p><p data-block-key=\"852wp\"><b>Example Field Naming Convention</b></p><p data-block-key=\"nnw3y\">Regular D1 Field: snt_buzz</p><p data-block-key=\"todrr\">Fast D1 Field: snt_buzz_fast_d1</p>",
+      "id": "42245f88-267b-401a-a1fa-3c9a344967dd"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "Dataset Id ",
+            "Dataset Category",
+            "Field Count"
+          ],
+          [
+            "fundamental3",
+            "fundamental",
+            "393"
+          ],
+          [
+            "news21",
+            "news",
+            "83"
+          ],
+          [
+            "option24",
+            "option",
+            "82"
+          ],
+          [
+            "other696",
+            "other",
+            "66"
+          ],
+          [
+            "earningscall_sentiment",
+            "other",
+            "59"
+          ],
+          [
+            "model240",
+            "model",
+            "52"
+          ],
+          [
+            "model216",
+            "model",
+            "45"
+          ],
+          [
+            "model136",
+            "model",
+            "45"
+          ],
+          [
+            "other384",
+            "other",
+            "33"
+          ],
+          [
+            "news46",
+            "news",
+            "30"
+          ],
+          [
+            "earnings7",
+            "earnings",
+            "20"
+          ],
+          [
+            "other296",
+            "other",
+            "19"
+          ],
+          [
+            "news7",
+            "news",
+            "19"
+          ],
+          [
+            "other492",
+            "other",
+            "15"
+          ],
+          [
+            "news36",
+            "news",
+            "14"
+          ],
+          [
+            "broker24",
+            "broker",
+            "13"
+          ],
+          [
+            "search_interest",
+            "other",
+            "12"
+          ],
+          [
+            "news104",
+            "news",
+            "11"
+          ],
+          [
+            "news13",
+            "news",
+            "8"
+          ],
+          [
+            "fundamental110",
+            "fundamental",
+            "7"
+          ],
+          [
+            "earnings1",
+            "earnings",
+            "6"
+          ],
+          [
+            "socialmedia12",
+            "socialmedia",
+            "6"
+          ],
+          [
+            "pv90",
+            "pv",
+            "4"
+          ],
+          [
+            "news59",
+            "news",
+            "2"
+          ],
+          [
+            "news35",
+            "news",
+            "2"
+          ],
+          [
+            "shortinterest30",
+            "shortinterest",
+            "2"
+          ],
+          [
+            "other10",
+            "other",
+            "1"
+          ],
+          [
+            "",
+            "Total",
+            "1049"
+          ]
+        ],
+        "firstRowIsTableHeader": true,
+        "firstColIsHeader": false
+      },
+      "id": "8cb53772-5691-4ee3-8151-d33dcb4e0b3f"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"hj878\"></p><p data-block-key=\"ipnuq\">Additionally, you must use the datafield ‘<i>pv98_vwap_15m_delay_minus_1_returns_fast_d1</i>’ for using returns value and ‘<i>usa_vwap_15m_delay_minus_1_fast_d1’</i> for using the price of the stock at the FastD1 cutoff time.</p><p data-block-key=\"bl014\">You can search for the above datasets on Data Explorer and find such fields.</p><p data-block-key=\"tsb4o\">Besides, since all fields in Fast D1 have a suffix of ‘_fast_d1’ it would be easier to filter such fields using the Brain API using Python</p>",
+      "id": "32d262ad-9d81-4bf4-a154-d153f3b0a614"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Best Practices & Technical Considerations"
+      },
+      "id": "63a64934-300d-4149-b77c-90abb37de0cf"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"iji6g\">Almost 50% of the Fast D1 fields available for use are vector datafields. So make sure to use appropriate vector operators for such fields to prevent errors during simulation.</li><li data-block-key=\"he5mw\">Try using the winsorize operator or other outlier removal techniques incase you face weight concentration errors.</li></ul>",
+      "id": "2ce4f30d-f1ab-4adb-ac1d-c4d583e8af28"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Submission Guidelines"
+      },
+      "id": "942657d3-4a3f-486e-bc4f-230e70be576a"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"ombnf\"></p><p data-block-key=\"j8ws0\"><b>✅ Mandatory Performance Check</b></p><p data-block-key=\"bq8fa\"><b>Submit Fast D1 Alphas ONLY if they outperform their D1 equivalents</b></p><p data-block-key=\"284vv\">Example:</p><p data-block-key=\"75kp7\">Alpha A: Using snt_buzz_fast_d1 → Sharpe 2.8, Turnover 33%</p><p data-block-key=\"3avd4\">Alpha B: Using snt_buzz (regular D1) → Sharpe 2.6, Turnover 30%</p><p data-block-key=\"gecpt\">✓ Submit Alpha A only if performance is superior</p><p data-block-key=\"icstn\"><b>Production Correlation</b></p><ul><li data-block-key=\"dh441\"><b>Same correlation pool</b> as regular D1 alphas</li><li data-block-key=\"jocp5\"><b>Approach:</b> Using delta (<b>field_fast_d1 - field</b>) may help reduce production correlation</li></ul>",
+      "id": "ce39150a-446a-4978-a591-29434e04d39e"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Research Directions & Alpha Development"
+      },
+      "id": "e2196a6d-4ded-40f0-9608-09d0887bc4c2"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"vl939\"></p><p data-block-key=\"rzbop\"><b>🚀 Priority 1: Overnight Information Capture</b></p><p data-block-key=\"296vw\">Focus on datasets that provide unique overnight insights:</p><p data-block-key=\"ae16p\"><b>High Priority:</b></p><ul><li data-block-key=\"9e7c2\"><b>News datasets</b> (news21, news46, news7, news36, news104)</li><li data-block-key=\"6mfwc\"><b>Options activity</b> (option24)</li><li data-block-key=\"5drre\"><b>Social media sentiment</b> (socialmedia12)</li><li data-block-key=\"p7rv7\"><b>Earnings data</b> (earnings7, earnings1, earningscall_sentiment)</li><li data-block-key=\"2bfdj\"><b>Short interest changes</b> (shortinterest30)</li></ul><p data-block-key=\"ivxle\"><b>💡 Priority 2: Delta/Change-Based Alphas</b></p><p data-block-key=\"puhcz\">Capture the <b>overnight information change</b>:</p><p data-block-key=\"ykd7z\"><i># Example: Overnight social media sentiment shift</i> : Change in snt_buzz_fast_d1 compared to snt_buzz</p><p data-block-key=\"lgwh5\"><b>🎯 Priority 3: Event-Driven Models</b></p><p data-block-key=\"3k1gz\">Target specific overnight catalysts:</p><ul><li data-block-key=\"c3bwu\">Earnings announcements</li><li data-block-key=\"wws74\">Analyst upgrades/downgrades</li><li data-block-key=\"sc75f\">News events</li><li data-block-key=\"rbfhj\">Pre-market price/returns discovery</li><li data-block-key=\"kq7w7\">Short interest information<br/></li></ul><p data-block-key=\"ll47s\"><b>Note: You can submit high turnover Alphas (~30%) on those Alphas that capture short lived overnight dislocations. However, ensure that you maintain a Minimum Margin &gt; 4bps in these Alphas</b></p>",
+      "id": "a1f6bb2f-f1e0-44a6-af1f-31a9615cb1fb"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"u8qks\"><b>Quick Start Checklist</b></p><ul><li data-block-key=\"bm7vv\">Set simulation to <b>Delay-1</b></li><li data-block-key=\"rugx3\">Select fields with <b>_fast_d1</b> suffix</li><li data-block-key=\"snyz7\">Use <b>vector operators</b> for vector fields</li><li data-block-key=\"9gdha\">Use special <b>returns and price fields</b></li><li data-block-key=\"926n3\">Apply <b>winsorize</b> if needed</li><li data-block-key=\"r15w3\"><b>Compare performance</b> with regular D1 version</li><li data-block-key=\"z7n7d\">Verify <b>margin &gt; 4 bps</b></li><li data-block-key=\"8m5aw\">Test for <b>production correlation</b></li><li data-block-key=\"w1uh1\">Submit only if <b>Fast D1 version outperforms D1 – an exception to this is if you create Alphas using delta between Fast D1 field and D1 field as then you do not have comparable D1 performance.</b></li></ul>",
+      "id": "4f2f3116-7f7d-4f83-950c-b7d87a1266d2"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"cd55j\"><b>Key Takeaways</b></p><p data-block-key=\"6oi29\">✨ <b>Fast D1 captures the overnight edge</b> that traditional D1 misses<br/> ✨ <b>Focus on news, options, social media, and earnings</b> datasets<br/> ✨ <b>Use delta approaches</b> (fast_d1 - regular) for unique signals<br/> ✨ <b>Submit only superior performers</b> compared to D1 equivalents<br/> ✨ <b>Target high-quality signals</b> with margin &gt; 4 bps</p>",
+      "id": "1016ae0c-f08e-4c44-9d68-ed37d7551b9b"
+    }
+  ],
+  "sequence": 1222,
+  "category": "Advanced Topics",
+  "duration": "PT4M"
+}

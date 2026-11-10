@@ -1,0 +1,41 @@
+{
+  "id": "getting-started-eur-top2500-universe",
+  "title": "EUR TOP2500 Universe",
+  "lastModified": "2026-09-18T01:10:05.533505-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article introduces the EUR TOP2500 universe and explains why expanding beyond TOP1200 can improve coverage, peer comparisons, and neutralization stability. It helps users retest existing European Alphas, check performance in more liquid subsets, and apply stronger neutralization methods for broader European research.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "d815e650-bdd9-459e-a9e7-75e3e50465e4"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Characteristics of the EUR TOP2500 Universe"
+      },
+      "id": "7d4f2c7c-018e-4205-9fd0-6caf04d6b759"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"zeymc\">The EUR TOP2500 universe expands from the TOP1200, covering around 2500 instruments. This offers a broader area for analysis.</p>",
+      "id": "64925827-96b8-4ed2-a77b-c3990a7898e3"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips for Success"
+      },
+      "id": "8cdfb99e-41cc-4459-bbec-89eeb0ccf851"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"krgaw\">Resimulate your TOP1200 Alphas on the new TOP2500 universe.</li><li data-block-key=\"3uq11\">Adapt GLB region Alphas to the EUR TOP2500 universe.</li><li data-block-key=\"f0r59\">Start with datasets in price volume, analyst, fundamental, option, and short interest categories.</li><li data-block-key=\"poq9l\">In addition to sub-universe test, check Alpha&#x27;s performance on the TOP800 universe to evaluate performance on liquid instruments.</li><li data-block-key=\"5doh8\"><b>Apply Double Neutralization</b>:<ul><li data-block-key=\"ftuee\">With the expanded EUR TOP2500 universe, more instruments are available within each group. This increased number of instruments per group enhances the reliability and robustness of your Alphas.</li><li data-block-key=\"3n900\"><b>Country Neutralization</b>: Remove country-specific risk by neutralizing by country mean values.</li><li data-block-key=\"jyh4r\"><b>Sector/Industry Neutralization</b>: Further refine by neutralizing by sector or industry.</li><li data-block-key=\"y4il2\"><b>Example</b>: new_group = group_cartesian_product(country, industry), or new_group = densify(country) + densify(industry)*100</li></ul></li><li data-block-key=\"01c8c\">Neutralize EUR Alphas against a group of risk factors using group neutralize operators or use SLOW, FAST, SLOW_AND_FAST, CROWDING, STATISTICAL neutralization in settings.</li></ul><p data-block-key=\"vvrks\">Take advantage of the expanded EUR TOP2500 universe for more reliable and robust Alphas.</p><p data-block-key=\"3ho5s\">Happy simulating!</p>",
+      "id": "4623fc65-cf58-45ff-aa33-d17dbf5efa25"
+    }
+  ],
+  "sequence": 101,
+  "category": "Regions and Universes",
+  "duration": "PT1M"
+}

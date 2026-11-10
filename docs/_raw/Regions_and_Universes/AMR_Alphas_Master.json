@@ -1,0 +1,33 @@
+{
+  "id": "getting-started-amr-alphas",
+  "title": "AMR Alphas [Master]",
+  "lastModified": "2026-09-18T01:08:56.276043-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains the unique challenges of Alpha research in the AMR region, where high volatility, high transaction costs, and sector concentration make margin and diversification especially important. It guides users toward suitable data categories and recommends country-level neutralization to reduce the impact of large market differences within the region.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "bf2b97c4-21fe-479b-aadf-24fdc5ae3649"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"fhl91\"></p><p data-block-key=\"rarjr\">The AMR Region universe is comprised of around 600-650 stocks, spanning across the AMR region. AMR alphas share many similarities with their USA counterparts, but they also possess unique nuances. The in-sample testing criteria for Alphas in the AMR region align with those of the USA.</p>",
+      "id": "b7341ad0-4f2c-4eec-abe9-885898a29786"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips for Success"
+      },
+      "id": "38f1ef08-408b-4add-932c-419554832e62"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"41nkv\"></p><p data-block-key=\"wg30r\"></p><ul><li data-block-key=\"8lnqk\">However, given AMR&#x27;s higher volatility and associated higher returns, it&#x27;s essential to consider the region&#x27;s elevated transaction costs. <b>The higher your alpha&#x27;s margins</b>, the better.</li><li data-block-key=\"lsm61\">The AMR region is dominated by sectors such as Basic Materials, Financials, Consumer Cyclicals and Consumer Non-Cyclicals, Energy, and Industrials. Canada&#x27;s significant exposure to Materials, Energy, and Financials means these sectors will have higher gross exposure compared to other sectors and regions. Therefore, it&#x27;s important to <b>ensure that your PnL isn&#x27;t excessively skewed towards a particular sector.</b></li><li data-block-key=\"s1w9k\"><b>Fundamental-based signals, Price Volume, and technical signals</b> serve as excellent starting points for your research in the region. Fundamental-based signals particularly shine, especially those relevant to companies in the Materials/Energy/Industrials and Consumer/Financials sectors.</li><li data-block-key=\"mdx0a\"><b>Technical and PV alphas</b> perform similarly to those in the USA region. <b>Analyst</b> and <b>Option</b> datasets also demonstrate solid performance in the region.</li><li data-block-key=\"tqbhp\">When considering neutralization settings, <b>neutralizing by country before any other grouping</b> can prove beneficial. This approach mitigates country-specific risk in your alpha, a critical step given the substantial market differences within the AMR region.</li></ul>",
+      "id": "88e9ee69-49c1-4d38-915b-eab53c43df8e"
+    }
+  ],
+  "sequence": 120,
+  "category": "Regions and Universes",
+  "duration": "PT2M"
+}

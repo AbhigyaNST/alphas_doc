@@ -1,0 +1,47 @@
+{
+  "id": "single-dataset-alphas",
+  "title": "❗ Single Dataset Alphas",
+  "lastModified": "2026-09-18T01:09:15.168274-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains Single Dataset Alphas and why limiting an expression to one dataset can reduce overfitting caused by combining unrelated signals. It shows how this cleaner research structure earns relaxed submission criteria while still requiring users to build meaningful, internally consistent Alphas.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "9c1e79b0-1a02-4c7c-b478-763e1d2fd1b1"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"4yq25\"></p><p data-block-key=\"ec0m8\">Single Dataset Alphas* use data fields from only one dataset to build the entire Alpha expression, excluding 6 permitted grouping fields that can be a part of the expression – country, exchange, market, sector, industry and subindustry. Single Dataset Alphas also have a slightly relaxed <a href=\"https://platform.worldquantbrain.com/learn/documentation/consultant-information/consultant-submission-tests\">submission criteria</a>. For such Alphas, rather than clearing IS Ladder Sharpe test, Alphas need to only clear certain limits for Last 2Y IS Sharpe.</p><p data-block-key=\"3bwq5\">Further details on the importance of Single Dataset Alphas and the relaxed IS testing details are discussed below:</p><p data-block-key=\"34oh3\"><b>Introduction</b></p><p data-block-key=\"4j8eg\">BRAIN offers a wide array of datasets spanning various <a href=\"https://platform.worldquantbrain.com/data/data-sets?delay=1&amp;instrumentType=EQUITY&amp;limit=20&amp;offset=0&amp;region=USA&amp;universe=TOP3000\">categories</a>, including fundamental, price-volume, analyst, and options data. While an alpha can incorporate data fields from multiple datasets, this approach if not implemented correctly, may potentially lead to overfitting due to the mixing of conflicting signals between datasets.</p><p data-block-key=\"ivhpj\">In contrast, single dataset Alphas maintain homogeneity by using data from only one dataset, making them less prone to overfitting and more robust in their predictions.</p><p data-block-key=\"bxagl\"><b>Single Dataset Alpha Expression Properties</b></p><ol><li data-block-key=\"5ztmt\">Single Dataset Alphas must utilize data fields from only one dataset, with exceptions for the following 6 permitted grouping fields – country, exchange, market, sector, industry and subindustry.</li><li data-block-key=\"lxiih\">The use of inst_pnl() and convert() operators is considered as utilizing the pv1 dataset since these operators rely on pv1 data for calculations.</li></ol><p data-block-key=\"892f5\"><b>Submission Tests for Single Dataset Alphas</b></p><p data-block-key=\"p4rwn\">Single Dataset Alphas have slightly relaxed <a href=\"https://platform.worldquantbrain.com/learn/documentation/consultant-information/consultant-submission-tests\">submission criteria</a> as compared to regular Alphas. These Alphas don’t need to pass the <a href=\"https://platform.worldquantbrain.com/learn/documentation/consultant-information/consultant-submission-tests#check-is-sharpe-or-is-ladder-test\">IS Ladder Sharpe Test</a>. Instead, only the last two year Avg IS Sharpe of the Alpha must clear the following thresholds:</p><p data-block-key=\"up1ah\"></p>",
+      "id": "4cbda995-995c-4b0e-835f-66edff582480"
+    },
+    {
+      "type": "TABLE",
+      "value": {
+        "data": [
+          [
+            "Last 2Y Sharpe limit",
+            "Threshold"
+          ],
+          [
+            "Delay-1",
+            "2.38"
+          ],
+          [
+            "Delay-0",
+            "3.96"
+          ]
+        ],
+        "firstRowIsTableHeader": false,
+        "firstColIsHeader": true
+      },
+      "id": "c11a5e2a-8b9a-4968-9c60-21fb42cd027a"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"95gqy\"><b>Note</b>: If the turnover of Alpha is less than 30%, the IS Sharpe Ladder PASS_THRESHOLDS are multiplied by a factor of 0.85.</p><p data-block-key=\"dx3hl\"></p><p data-block-key=\"j5v1v\">For more information, refer to <a href=\"https://platform.worldquantbrain.com/learn/documentation/consultant-information/consultant-submission-tests#:~:text=EUR%20ILLIQUID_MINVOL1M%3A%200.355-,Check%2DIS%2DSharpe%20or%20IS%2DLadder%20test,-%F0%9D%91%86\">Check-IS-Sharpe or IS-Ladder test</a><br/></p><p data-block-key=\"eeniy\">All Alpha simulations with properties of Single Dataset Alphas shall display the message “2 year Sharpe of &lt;value&gt; is below cutoff of &lt;limit&gt;” or “</p><p data-block-key=\"sdbk1\">2 year Sharpe of &lt;value&gt; is above cutoff of &lt;limit&gt;.” in the IS Testing Status tab of Alpha simulation results instead of the IS Ladder Sharpe Pass/Fail criteria.</p>",
+      "id": "4125322c-0ac4-414d-a92f-57b26be93d0e"
+    }
+  ],
+  "sequence": 150,
+  "category": "Creating Alphas",
+  "duration": "PT2M"
+}

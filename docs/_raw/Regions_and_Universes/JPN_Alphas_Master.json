@@ -1,0 +1,67 @@
+{
+  "id": "getting-started-jpn-alphas",
+  "title": "JPN Alphas [Master]",
+  "lastModified": "2026-09-18T04:21:41.041400-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article explains why Japan requires its own Alpha research approach despite being part of ASI, because its market is large, liquid, stable, and relatively efficient. It helps users focus on realistic signal expectations, local datasets, value and price-volume ideas, seasonality, recent-year robustness, and D0 research considerations.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "749fc568-cf93-4745-8c82-e89fce6febfa"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Introduction"
+      },
+      "id": "873fcf17-98a4-4c63-807d-7d060469dd2f"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"ioaxf\">The JPN Region universe consists of about 1,200 to 1,600 stocks, making it the largest single country&#x27;s stock market in the ASI region in terms of the number of instruments. It&#x27;s also one of the biggest and most significant markets globally in terms of liquidity and market capitalization. While JPN Alphas share some similarities with their ASI counterparts when simulating ASI Alpha, they also have unique characteristics. Therefore, it&#x27;s recommended to develop signals that align with <b>JPN-specific Alpha ideas, utilizing local datasets</b>, and more. Try to discover some helpful tips for achieving success in Alpha research in the JPN region!</p><p data-block-key=\"ln9fq\">When simulating or submitting Alphas in HKG, KOR or TWN regions, you have to turn on the &#x27;Max Trade&#x27; option.</p>",
+      "id": "c885c5b1-f880-4a7c-afe2-d6405a2a021d"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips for success"
+      },
+      "id": "cf443989-39d5-44e4-a0dc-dca854bd4189"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"y853d\"></p><ul><li data-block-key=\"dykca\">The Japanese market is stable, liquid, efficient, and well-organized. So, please find the following characteristics:<ul><li data-block-key=\"umofe\"><b>The expected return at the Alpha level is relatively lower</b> compared to other regions.</li><li data-block-key=\"gkfy7\">The market shows relatively <b>weak momentum</b>, instead having <b>more seasonality</b>. Alphas may not be effective throughout the year, resulting in <b>lower Sharpe ratios</b> compared to other regions.</li><li data-block-key=\"jczf4\">It&#x27;s important to consider the <b>performance in recent years</b>, as it may differ before and after Covid-19.</li></ul></li><li data-block-key=\"ghl1c\">Suggestions for Alpha categories to start with:<ul><li data-block-key=\"jr2ju\"><a href=\"https://www.investopedia.com/terms/v/valueinvesting.asp\"><b>Value Investing</b></a>, which entails selecting undervalued stocks based on their intrinsic or book value, plays a crucial role in influencing the market. <b>Model category (For example,</b> <a href=\"https://platform.worldquantbrain.com/data/data-sets/model77?delay=1&amp;instrumentType=EQUITY&amp;limit=20&amp;offset=0&amp;region=JPN&amp;universe=TOP1600\"><b>model77</b></a><b>)</b> can effectively cover these types of Alphas.</li><li data-block-key=\"yusw9\"><a href=\"https://platform.worldquantbrain.com/data/data-sets?category=pv&amp;delay=1&amp;instrumentType=EQUITY&amp;limit=20&amp;offset=0&amp;region=JPN&amp;universe=TOP1600\"><b>Price-volume</b></a> Alphas typically perform well.</li></ul></li></ul><p data-block-key=\"x0jrr\"></p>",
+      "id": "edc2ce57-0c3e-410c-bfbf-4457e8a5e156"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Unique Characteristics of JPN D0"
+      },
+      "id": "120f17dd-c36a-4b15-991d-de99167b67f8"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"w24zw\">Cutoff time refers to the specific point in time beyond which no future data is incorporated into the simulation. The Delay 0 simulation ensures that no data after the specified cutoff time is used, maintaining the integrity and accuracy of your results by avoiding forward bias.</li><li data-block-key=\"2e4y3\">Price-volume based Alphas usually show good performance at the D0 level. However, it&#x27;s worth noting that JPN generally exhibits weaker price-volume performance compared to other regions.</li></ul>",
+      "id": "ee9fe22e-f484-4a08-ab43-5036b1bb44f0"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Tips for Success in JPN D0"
+      },
+      "id": "c526e06e-c54e-40b7-bd68-74aa621cc5b5"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"95ao7\">Prioritize more liquid stocks within the JPN universe TOP1200. Higher liquidity generally leads to more reliable and robust Alpha signals.</li><li data-block-key=\"piy05\">Consider the performance in recent years, as it may vary significantly before and after events such as Covid-19.</li><li data-block-key=\"ocx6c\">Focus on datasets that show better performance in D0 compared to D1 with the same Alpha implementation.</li><li data-block-key=\"opy1i\">We recommend reading Clifford S. Asness&#x27;s paper &#x27;Momentum in Japan: The Exception that Proves the Rule&#x27;. This paper delves into the reasons behind the weaker momentum in Japan and serves as a valuable starting point for identifying profitable signals in the Japanese market.</li></ul>",
+      "id": "187e2876-e384-4697-a8ea-adb7b8201d87"
+    }
+  ],
+  "sequence": 121,
+  "category": "Regions and Universes",
+  "duration": "PT3M"
+}

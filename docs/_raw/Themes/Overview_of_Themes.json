@@ -1,0 +1,20 @@
+{
+  "id": "overview-themes",
+  "title": "Overview of Themes",
+  "lastModified": "2026-09-18T01:06:25.891162-04:00",
+  "content": [
+    {
+      "type": "TEXT",
+      "value": "<style>\r\n  .summary-card {\r\n    background: #f7f9fb;\r\n    border: 1px solid #eaecf0;\r\n    border-radius: 8px;\r\n    padding: 16px;\r\n    width: fit-content;\r\n    max-width: 760px;\r\n  }\r\n  .summary-header {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n    margin-bottom: 8px;\r\n  }\r\n  .summary-icon {\r\n    font-size: 14px;\r\n    color: #704e9c;\r\n  }\r\n  .summary-label {\r\n    font-size: 13px;\r\n    font-weight: 600;\r\n    color: #222733;\r\n  }\r\n  .summary-body {\r\n    font-size: 13px;\r\n    line-height: 140%;\r\n    color: #222733;\r\n    margin: 0;\r\n  }\r\n</style>\r\n<div class=\"summary-card\">\r\n  <div class=\"summary-header\">\r\n    <span class=\"summary-icon\">✨</span>\r\n    <span class=\"summary-label\">Summary</span>\r\n  </div>\r\n  <p class=\"summary-body\">\r\n    This article introduces Themes and explains why BRAIN uses them to encourage research in specific regions, datasets, delays, or other focus areas for limited periods. It also explains Dynamic Pyramid Multiplier and how underused pyramids can receive higher quality-factor multipliers.\r\n  </p>\r\n</div>\r\n<br>",
+      "id": "978a5664-456d-4fac-ba9f-d3aa9021af23"
+    },
+    {
+      "type": "TEXT",
+      "value": "<p data-block-key=\"42rx1\"><b>What are Themes?</b></p><p data-block-key=\"cbtcp\">Occasionally, additional themes of regions, datasets, delays etc. may be announced on BRAIN. These typically run for 2-4 weeks, starting Monday (US EST) and lasting through the following Sunday (US EST).</p><p data-block-key=\"5kp8b\">Additional access to Region × Dataset combinations may be provided to consultants for the duration of the theme, if needed.</p><p data-block-key=\"l45wf\"></p><p data-block-key=\"ehsxo\"><b>What is Dynamic Pyramid Multiplier?</b></p><p data-block-key=\"nif5t\">This pyramid multiplier is a new Theme, which is applicable to the calculation of the quality factor of your periodic base fees.</p><p data-block-key=\"7cjqr\">This multiplier is determined by the utilization of the specific pyramid in all BRAIN Alphas, with lower utilization resulting in a higher multiplier. The multiplier may vary daily, providing you the opportunity to further refine your research. You can view the multipliers for all pyramids on the &quot;<a href=\"https://platform.worldquantbrain.com/data/data-sets\">Dataset</a>&quot; page. After simulation, the applicable multiplier for each Alpha can be viewed under the <a href=\"https://platform.worldquantbrain.com/simulate\">simulation results</a>.</p><p data-block-key=\"rpqo0\">You can read additional <a href=\"https://support.worldquantbrain.com/hc/en-us/sections/5887970274071-Themes\">FAQs</a> about Themes, other <a href=\"https://support.worldquantbrain.com/hc/en-us/community/topics/20933777451031-Global-Consultant-Community-for-Staying-Ahead?filter_by=completed\">useful resources</a> to help you make Alphas in dataset categories and understand <a href=\"https://platform.worldquantbrain.com/learn/documentation/themes/multiplier-rules\">multiplier rules</a> for Themes</p>",
+      "id": "e7a52f31-bf09-45fc-9445-8ef5a0a12230"
+    }
+  ],
+  "sequence": 0,
+  "category": "Themes",
+  "duration": "PT1M"
+}

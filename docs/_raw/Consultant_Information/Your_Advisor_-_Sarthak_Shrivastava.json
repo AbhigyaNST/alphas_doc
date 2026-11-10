@@ -1,0 +1,41 @@
+{
+  "id": "your-advisor-sarthak-shrivastava",
+  "title": "Your Advisor - Sarthak Shrivastava",
+  "lastModified": "2026-08-23T02:15:36.763838-04:00",
+  "content": [
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Advisor: Sarthak Shrivastava"
+      },
+      "id": "29e0062a-6cd0-46d1-b6f2-a8d2b490afd8"
+    },
+    {
+      "type": "TEXT",
+      "value": "<h3><a href=\"https://www.linkedin.com/in/sarthakshrivastava\">LinkedIn Profile</a></h3>",
+      "id": "64b25309-87dc-4619-9b4b-59ba89cedb5c"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"ovgr0\">I am excited to introduce myself and to collaborate with you during the BRAIN Research Advisory Program.</li><li data-block-key=\"xpspi\">I completed my bachelor’s degree in Civil Engineering from the Indian Institute of Technology Delhi in 2023, specializing in applied machine learning and computational mechanics.</li><li data-block-key=\"xmf4v\">After graduation, I worked as an AI Engineer, where I built applications using NLP, large language models (LLMs), and AI agents, gaining hands-on experience in designing and deploying ML-powered systems.</li><li data-block-key=\"kkyti\">Currently, as an AI Researcher at WorldQuant BRAIN, I focus on alpha research, leveraging machine learning and LLMs.</li><li data-block-key=\"q0cm9\">I look forward to collaborating with you, sharing insights, and supporting your research.</li></ul>",
+      "id": "00a10900-04b3-46d1-9c70-f5a5ff4fd520"
+    },
+    {
+      "type": "HEADING",
+      "value": {
+        "level": "1",
+        "content": "Contacting your advisor"
+      },
+      "id": "c69341bc-7da2-4469-a301-995b969c19f2"
+    },
+    {
+      "type": "TEXT",
+      "value": "<ul><li data-block-key=\"u0lmf\">Email: <a href=\"mailto:sarthak.shrivastava@worldquant.com\">sarthak.shrivastava@worldquant.com</a></li><li data-block-key=\"qf4pt\">Register for the next session from the <a href=\"https://platform.worldquantbrain.com/events\">Events Page</a></li><li data-block-key=\"x8e5l\">Advisory forum: <a href=\"https://support.worldquantbrain.com/hc/en-us/community/topics/40122794519319-Advisory-Program-Discussion-Sarthak-Shrivastava\">Advisory forum</a></li></ul>",
+      "id": "7a1f0c51-ac0d-4fdf-adcd-78966f076dd0"
+    }
+  ],
+  "sequence": 125,
+  "category": "Consultant Info",
+  "duration": "PT1M"
+}
